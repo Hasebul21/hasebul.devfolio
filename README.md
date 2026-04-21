@@ -217,7 +217,6 @@ Simply edit these arrays to customize your content without a backend.
 
 ## 6. Project Architecture
 
-### Frontend (Angular 17+)
 
 ```
 src/app/
