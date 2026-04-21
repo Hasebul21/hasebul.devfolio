@@ -2,7 +2,7 @@
 
 A production-grade full-stack personal portfolio built with **Angular 17+**, **Spring Boot 3**, and **Supabase (PostgreSQL)**.
 
-## Project Structure
+## Project Structures
 
 ```
 personal-portfolio/
