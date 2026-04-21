@@ -1,45 +1,152 @@
-import { Component } from '@angular/core';
+import { Component, signal, OnInit, inject } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { NavbarComponent }    from './shared/components/navbar/navbar.component';
-import { FooterComponent }    from './shared/components/footer/footer.component';
-import { HeroComponent }      from './features/hero/hero.component';
-import { AboutComponent }     from './features/about/about.component';
-import { SkillsComponent }    from './features/skills/skills.component';
-import { ProjectsComponent }  from './features/projects/projects.component';
-import { ExperienceComponent }from './features/experience/experience.component';
-import { EducationComponent } from './features/education/education.component';
-import { ResumeComponent }    from './features/resume/resume.component';
-import { ContactComponent }   from './features/contact/contact.component';
+import { FormsModule, ReactiveFormsModule, FormBuilder, Validators } from '@angular/forms';
+
+// ng-zorro-antd
+import { NzLayoutModule }    from 'ng-zorro-antd/layout';
+import { NzTabsModule }      from 'ng-zorro-antd/tabs';
+import { NzCardModule }      from 'ng-zorro-antd/card';
+import { NzButtonModule }    from 'ng-zorro-antd/button';
+import { NzTagModule }       from 'ng-zorro-antd/tag';
+import { NzProgressModule }  from 'ng-zorro-antd/progress';
+import { NzTimelineModule }  from 'ng-zorro-antd/timeline';
+import { NzGridModule }      from 'ng-zorro-antd/grid';
+import { NzAvatarModule }    from 'ng-zorro-antd/avatar';
+import { NzDividerModule }   from 'ng-zorro-antd/divider';
+import { NzBadgeModule }     from 'ng-zorro-antd/badge';
+import { NzFormModule }      from 'ng-zorro-antd/form';
+import { NzInputModule }     from 'ng-zorro-antd/input';
+import { NzSwitchModule }    from 'ng-zorro-antd/switch';
+import { NzIconModule }      from 'ng-zorro-antd/icon';
+import { NzTooltipModule }   from 'ng-zorro-antd/tooltip';
+import { NzResultModule }    from 'ng-zorro-antd/result';
+import { NzMessageService }  from 'ng-zorro-antd/message';
+
+// Services & models
+import { SkillsService }     from './core/services/skills.service';
+import { ProjectsService }   from './core/services/projects.service';
+import { ExperienceService } from './core/services/experience.service';
+import { ContactService }    from './core/services/contact.service';
+import { SkillGroup }        from './core/models/skill.model';
+import { Project }           from './core/models/project.model';
+import { Experience }        from './core/models/experience.model';
+import { Education }         from './core/models/contact.model';
 
 @Component({
   selector: 'app-root',
   standalone: true,
   imports: [
-    CommonModule,
-    NavbarComponent,
-    FooterComponent,
-    HeroComponent,
-    AboutComponent,
-    SkillsComponent,
-    ProjectsComponent,
-    ExperienceComponent,
-    EducationComponent,
-    ResumeComponent,
-    ContactComponent,
+    CommonModule, FormsModule, ReactiveFormsModule,
+    NzLayoutModule, NzTabsModule, NzCardModule, NzButtonModule,
+    NzTagModule, NzProgressModule, NzTimelineModule, NzGridModule,
+    NzAvatarModule, NzDividerModule, NzBadgeModule,
+    NzFormModule, NzInputModule, NzSwitchModule,
+    NzIconModule, NzTooltipModule, NzResultModule,
   ],
-  template: `
-    <app-navbar></app-navbar>
-    <main>
-      <app-hero></app-hero>
-      <app-about></app-about>
-      <app-skills></app-skills>
-      <app-projects></app-projects>
-      <app-experience></app-experience>
-      <app-education></app-education>
-      <app-resume></app-resume>
-      <app-contact></app-contact>
-    </main>
-    <app-footer></app-footer>
-  `,
+  templateUrl: './app.html',
 })
-export class App {}
+export class App implements OnInit {
+  private readonly skillsSvc     = inject(SkillsService);
+  private readonly projectsSvc   = inject(ProjectsService);
+  private readonly experienceSvc = inject(ExperienceService);
+  private readonly contactSvc    = inject(ContactService);
+  private readonly fb            = inject(FormBuilder);
+  private readonly msg           = inject(NzMessageService);
+
+  isDark = signal(false);
+  selectedTab = 0;
+
+  skillGroups: SkillGroup[]  = [];
+  allProjects: Project[]     = [];
+  experiences: Experience[]  = [];
+  education: Education[]     = [];
+
+  activeFilter = 'All';
+
+  get allTags(): string[] {
+    const tags = new Set<string>();
+    this.allProjects.forEach(p => p.techStack.forEach(t => tags.add(t)));
+    return ['All', ...Array.from(tags).sort()];
+  }
+
+  get filteredProjects(): Project[] {
+    if (this.activeFilter === 'All') return this.allProjects;
+    return this.allProjects.filter(p => p.techStack.includes(this.activeFilter));
+  }
+
+  sending = false;
+  sent    = false;
+  contactForm = this.fb.group({
+    name:    ['', [Validators.required, Validators.minLength(2)]],
+    email:   ['', [Validators.required, Validators.email]],
+    subject: ['', [Validators.required, Validators.minLength(5)]],
+    message: ['', [Validators.required, Validators.minLength(20)]],
+  });
+
+  ngOnInit(): void {
+    const saved = localStorage.getItem('portfolio-theme');
+    if (saved === 'dark') this.applyTheme(true);
+
+    this.skillsSvc.getStaticSkills().subscribe(g => this.skillGroups = g);
+    this.projectsSvc.getStaticProjects().subscribe(p => this.allProjects = p);
+    this.experienceSvc.getStaticExperiences().subscribe(e => this.experiences = e);
+    this.experienceSvc.getStaticEducation().subscribe(e => this.education = e);
+  }
+
+  toggleTheme(): void {
+    this.applyTheme(!this.isDark());
+  }
+
+  private applyTheme(dark: boolean): void {
+    this.isDark.set(dark);
+    document.body.classList.toggle('dark-theme', dark);
+    localStorage.setItem('portfolio-theme', dark ? 'dark' : 'light');
+  }
+
+  setFilter(tag: string): void {
+    this.activeFilter = tag;
+  }
+
+  submitContact(): void {
+    if (this.contactForm.invalid) {
+      Object.values(this.contactForm.controls).forEach(c => {
+        c.markAsDirty(); c.updateValueAndValidity();
+      });
+      return;
+    }
+    this.sending = true;
+    const payload = this.contactForm.value as any;
+    this.contactSvc.submitContact(payload).subscribe({
+      next: () => {
+        this.sent    = true;
+        this.sending = false;
+        this.msg.success('Message sent successfully!');
+      },
+      error: () => {
+        this.sending = false;
+        this.msg.error('Failed to send. Please email me directly.');
+      },
+    });
+  }
+
+  resetContact(): void {
+    this.sent = false;
+    this.contactForm.reset();
+  }
+
+  getCategoryColor(cat: string): string {
+    const m: Record<string, string> = {
+      languages: '#722ed1', frameworks: '#1890ff', tools: '#fa8c16',
+      databases: '#52c41a', cloud: '#13c2c2', 'ai-ml': '#eb2f96', other: '#8c8c8c',
+    };
+    return m[cat] ?? '#8c8c8c';
+  }
+
+  getTypeBadgeColor(type: string): string {
+    const m: Record<string, string> = {
+      'full-time': 'green', 'part-time': 'blue',
+      'internship': 'purple', 'contract': 'orange', 'freelance': 'cyan',
+    };
+    return m[type] ?? 'default';
+  }
+}
