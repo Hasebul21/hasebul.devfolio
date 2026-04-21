@@ -74,12 +74,4 @@ const STATIC_PROJECTS: Project[] = [
     featured: true,
     category: 'Research',
   },
-  {
-    id: 6,
-    title: 'Gen Z Sustainable Fashion ML Analysis',
-    description: 'Comparative ML framework with SHAP-based explainability identifying affordability and promotion as dominant adoption factors for sustainable fashion among Gen Z in Bangladesh.',
-    techStack: ['Python', 'Machine Learning', 'SHAP', 'Data Science'],
-    featured: true,
-    category: 'Research',
-  },
 ];
