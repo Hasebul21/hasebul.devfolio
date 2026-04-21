@@ -90,46 +90,69 @@ export class App implements OnInit {
 
   readonly publications: Publication[] = [
     {
-      title: 'Machine Learning-Based Early Risk Stratification Framework for Chronic Kidney Disease Progression',
-      venue: 'IEEE ICSFT 2026',
-      year: '2025',
-      status: 'Accepted — Oral Presentation',
-      type: 'Conference',
-      tags: ['Machine Learning', 'Healthcare', 'CKD', 'IEEE'],
-    },
-    {
       title: 'AI-Enhanced Prediction of Respiratory Irritation from Biomass Combustion Byproducts',
       venue: 'ICCCES 2026',
-      year: '2025',
+      year: '2024–2025',
       status: 'Accepted',
       type: 'Conference',
       url: 'https://ieeexplore.ieee.org/document/11437157',
-      tags: ['Random Forest', 'LSTM', 'AI', 'Healthcare'],
+      tags: ['Random Forest', 'LSTM', 'Machine Learning', 'Healthcare', 'AI'],
+    },
+    {
+      title: 'Comparative ML Analysis of Gen Z Sustainable Fashion Adoption in Bangladesh',
+      venue: 'Accepted (2025–2026)',
+      year: '2025–2026',
+      status: 'Accepted',
+      type: 'Journal/Conference',
+      tags: ['Machine Learning', 'SHAP', 'Explainability', 'Data Science'],
+    },
+  ];
+
+  readonly certifications = [
+    {
+      title: 'Secure Coding & Application Security',
+      issuer: 'SecureFlag',
+      detail: 'Hands-on training on OWASP Top 10, secure coding practices, and real-world exploitation scenarios.',
+      url: '#',
+      icon: 'safety',
+    },
+    {
+      title: 'Data Structures',
+      issuer: 'UC San Diego — Coursera',
+      detail: 'Fundamental data structures, algorithm design, and performance optimisation techniques.',
+      url: '#',
+      icon: 'deployment-unit',
     },
   ];
 
   readonly awards: Award[] = [
     {
-      title: '2100+ Programming Problems Solved',
-      detail: 'Across Codeforces, AtCoder, CodeChef, and LeetCode',
+      title: '2100+ Competitive Programming Problems',
+      detail: 'Codeforces, CodeChef, SPOJ, UVa, AtCoder, LeetCode — stopstalk.com/user/profile/WATTLE',
       icon: 'code',
     },
     {
       title: 'LeetCode Top 7.6% Globally',
-      detail: 'Solved over 700+ problems on LeetCode',
+      detail: '800+ problems solved — leetcode.com/u/Hasebul',
       icon: 'trophy',
     },
     {
-      title: '10th Place — Intra AIUB Programming Contest',
-      detail: 'Fall 2021–22, out of 70+ contestants',
+      title: '10th Place — Intra AIUB Programming Contest (Fall 2021–22)',
+      detail: 'Out of 70+ contestants — oj.synapse0.com',
       icon: 'star',
     },
     {
-      title: '6th Place — AIUB CS Fest 2018',
-      detail: 'Programming Contest, out of 60+ contestants',
+      title: '6th Place — AIUB CS Fest Programming Contest (2018)',
+      detail: 'Out of 60+ contestants — toph.co',
       icon: 'fire',
     },
   ];
+
+  readonly researchInterests = `My research interests lie at the intersection of machine learning and software systems, with a focus on building intelligent, data-driven solutions for large-scale, real-world applications. I am particularly interested in applying machine learning for systems optimisation — including intelligent log analysis for automated incident detection in microservices, predictive caching and adaptive TTL optimisation, and workload-aware database tuning using lightweight and interpretable models.
+
+I aim to design efficient and scalable ML-driven systems that improve reliability, performance, and observability in distributed environments. My work emphasises practical, production-ready solutions combining anomaly detection, time-series modelling, and reinforcement learning with system-level insights from logs, traces, and query workloads.
+
+Additionally, I am interested in MLOps practices (model versioning, monitoring, and deployment), data-centric AI development, and the integration of ML models into complex software infrastructures — building robust, interpretable, and maintainable systems that align with real-world DevOps and SRE constraints.`;
 
   sending = false;
   sent    = false;

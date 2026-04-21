@@ -11,6 +11,7 @@ import {
   StarOutline, ReadOutline, FileTextOutline, LinkOutline,
   CalendarOutline, SendOutline, EyeOutline, GithubFill,
   TrophyOutline, FireOutline, PhoneOutline, CheckCircleOutline,
+  SafetyOutline, DeploymentUnitOutline,
 } from '@ant-design/icons-angular/icons';
 
 import { routes }               from './app.routes';
@@ -22,6 +23,7 @@ const icons = [
   StarOutline, ReadOutline, FileTextOutline, LinkOutline,
   CalendarOutline, SendOutline, EyeOutline, GithubFill,
   TrophyOutline, FireOutline, PhoneOutline, CheckCircleOutline,
+  SafetyOutline, DeploymentUnitOutline,
 ];
 
 export const appConfig: ApplicationConfig = {
