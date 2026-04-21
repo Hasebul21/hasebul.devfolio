@@ -68,8 +68,9 @@ export class App implements OnInit {
   private readonly fb            = inject(FormBuilder);
   private readonly msg           = inject(NzMessageService);
 
-  isDark = signal(false);
+  isDark  = signal(false);
   selectedTab = 0;
+  // Tabs: 0=Home, 1=Skills, 2=Projects, 3=Experience, 4=Research, 5=Resume, 6=Contact
 
   skillGroups: SkillGroup[] = [];
   allProjects: Project[]    = [];

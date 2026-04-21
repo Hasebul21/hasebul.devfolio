@@ -373,12 +373,17 @@ body.dark-theme {
   }
 }
 
+/* ─── Hero avatar wrap (responsive) ─────────────── */
+.hero-avatar-wrap {
+  @media (min-width: 640px) {
+    width: auto !important;
+  }
+}
+
 /* ─── Responsive ─────────────────────────────────── */
 @media (max-width: 768px) {
   .portfolio-header { padding: 0 16px; }
-  .portfolio-content { padding: 20px 12px; }
   .hero-section h1 { font-size: 28px; }
   .stat-row { gap: 24px; }
   .brand-name { display: none; }
-  .portfolio-tabs .ant-tabs-content-holder { padding: 20px 12px; }
 }
