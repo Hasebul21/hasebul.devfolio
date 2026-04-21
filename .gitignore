@@ -1,0 +1,26 @@
+# ── Node / Frontend ──────────────────────────
+node_modules/
+dist/
+.angular/
+
+# ── Environment / Secrets ─────────────────────
+.env
+*.env.local
+backend/src/main/resources/application-local.properties
+
+# ── Java / Maven ──────────────────────────────
+target/
+*.class
+*.jar
+*.war
+*.log
+.mvn/wrapper/maven-wrapper.jar
+
+# ── OS ────────────────────────────────────────
+.DS_Store
+Thumbs.db
+
+# ── IDE ───────────────────────────────────────
+.idea/
+*.iml
+.vscode/settings.json

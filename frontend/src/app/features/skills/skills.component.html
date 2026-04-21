@@ -1,0 +1,64 @@
+<section id="skills" class="section-padding">
+  <div class="container-max">
+    <app-section-header
+      title="Skills & Technologies"
+      subtitle="Technologies I've worked with across projects, internships, and open-source contributions."
+      badge="Skills">
+    </app-section-header>
+
+    @if (loading) {
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        @for (i of [1,2,3,4]; track i) {
+          <app-card-skeleton></app-card-skeleton>
+        }
+      </div>
+    } @else {
+      <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6">
+        @for (group of skillGroups; track group.category) {
+          <div class="card p-6 hover:shadow-lg hover:shadow-primary-500/10 transition-all duration-300">
+            <!-- Category header -->
+            <div class="flex items-center gap-3 mb-5">
+              <div [class]="'w-2 h-10 rounded-full bg-gradient-to-b ' + getCategoryColor(group.category)"></div>
+              <div>
+                <h3 class="font-bold text-slate-900 dark:text-white">{{ group.label }}</h3>
+                <p class="text-xs text-slate-500 dark:text-slate-500">{{ group.skills.length }} skills</p>
+              </div>
+            </div>
+
+            <!-- Skills list -->
+            <div class="space-y-3">
+              @for (skill of group.skills; track skill.id) {
+                <div>
+                  <div class="flex items-center justify-between mb-1">
+                    <span class="text-sm font-medium text-slate-700 dark:text-slate-300">{{ skill.name }}</span>
+                    <div class="flex items-center gap-2">
+                      <span class="text-xs text-slate-500 dark:text-slate-500">{{ getProficiencyLabel(skill.proficiency) }}</span>
+                      <span class="text-xs font-mono text-primary-600 dark:text-primary-400">{{ skill.proficiency }}%</span>
+                    </div>
+                  </div>
+                  <div class="h-1.5 bg-slate-100 dark:bg-slate-700 rounded-full overflow-hidden">
+                    <div [class]="'h-full rounded-full bg-gradient-to-r transition-all duration-500 ' + getCategoryColor(group.category)"
+                         [style.width]="skill.proficiency + '%'">
+                    </div>
+                  </div>
+                </div>
+              }
+            </div>
+          </div>
+        }
+      </div>
+
+      <!-- Tech tag cloud -->
+      <div class="mt-12 text-center">
+        <p class="text-sm font-semibold text-slate-500 dark:text-slate-500 uppercase tracking-wider mb-4">All Technologies</p>
+        <div class="flex flex-wrap justify-center gap-2">
+          @for (group of skillGroups; track group.category) {
+            @for (skill of group.skills; track skill.id) {
+              <span class="tag">{{ skill.name }}</span>
+            }
+          }
+        </div>
+      </div>
+    }
+  </div>
+</section>
