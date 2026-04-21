@@ -10,6 +10,7 @@ import {
   ProjectOutline, UserOutline, EnvironmentOutline, CodeOutline,
   StarOutline, ReadOutline, FileTextOutline, LinkOutline,
   CalendarOutline, SendOutline, EyeOutline, GithubFill,
+  TrophyOutline, FireOutline, PhoneOutline, CheckCircleOutline,
 } from '@ant-design/icons-angular/icons';
 
 import { routes }               from './app.routes';
@@ -20,6 +21,7 @@ const icons = [
   ProjectOutline, UserOutline, EnvironmentOutline, CodeOutline,
   StarOutline, ReadOutline, FileTextOutline, LinkOutline,
   CalendarOutline, SendOutline, EyeOutline, GithubFill,
+  TrophyOutline, FireOutline, PhoneOutline, CheckCircleOutline,
 ];
 
 export const appConfig: ApplicationConfig = {

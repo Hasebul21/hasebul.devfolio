@@ -4,14 +4,17 @@
   <nz-header class="portfolio-header">
     <div class="header-brand">
       <div class="brand-avatar">HH</div>
-      <span class="brand-name">Hasebul Hassan</span>
+      <span class="brand-name">Hasebul Hassan Chowdhury</span>
     </div>
     <div class="header-right">
-      <a href="https://github.com/Hasebul21" target="_blank" nz-button nzType="text">
+      <a href="https://github.com/Hasebul21" target="_blank" nz-button nzType="text" nz-tooltip nzTooltipTitle="GitHub">
         <span nz-icon nzType="github" nzTheme="outline"></span>
       </a>
-      <a href="https://linkedin.com/in/hasebul" target="_blank" nz-button nzType="text">
+      <a href="https://linkedin.com/in/hasebul" target="_blank" nz-button nzType="text" nz-tooltip nzTooltipTitle="LinkedIn">
         <span nz-icon nzType="linkedin" nzTheme="outline"></span>
+      </a>
+      <a href="mailto:hasebulhassan21@gmail.com" nz-button nzType="text" nz-tooltip nzTooltipTitle="hasebulhassan21@gmail.com">
+        <span nz-icon nzType="mail" nzTheme="outline"></span>
       </a>
       <nz-switch
         [(ngModel)]="isDark"
@@ -26,29 +29,28 @@
   <nz-content>
     <nz-tabs
       [(nzSelectedIndex)]="selectedTab"
-      [nzCentered]="false"
       nzSize="large"
       class="portfolio-tabs"
       [nzAnimated]="true">
 
-      <!-- ─ HOME ─ -->
+      <!-- ─── HOME ─── -->
       <nz-tab nzTitle="🏠 Home">
         <div class="hero-section">
           <div class="hero-avatar">HH</div>
-
-          <h1>Hasebul Hassan</h1>
-          <p class="hero-title">Full-Stack Developer · Software Engineer · Researcher</p>
+          <h1>Hasebul Hassan Chowdhury</h1>
+          <p class="hero-title">Senior Software Engineer · Full-Stack Developer · Researcher</p>
           <p class="hero-desc">
-            Building elegant, scalable software with <strong>Java / Spring Boot</strong>,
-            <strong>Angular</strong>, and modern cloud technologies.
-            Passionate about clean code, great UX, and open source.
+            5+ years building scalable, high-performance backend systems with
+            <strong>Java (Spring Boot)</strong> and <strong>NestJS</strong>,
+            frontend expertise in <strong>Angular & React</strong>, and extensive
+            <strong>AWS cloud</strong> experience. Ranked in the <strong>top 7.6% globally</strong> on LeetCode.
           </p>
 
-          <div style="display:flex; justify-content:center; gap:12px; flex-wrap:wrap; margin-bottom:16px;">
-            <button nz-button nzType="primary" nzSize="large" (click)="selectedTab = 6">
+          <div style="display:flex;justify-content:center;gap:12px;flex-wrap:wrap;margin-bottom:16px;">
+            <button nz-button nzType="primary" nzSize="large" (click)="selectedTab = 7">
               <span nz-icon nzType="mail"></span> Get In Touch
             </button>
-            <a href="assets/resume/resume.pdf" download nz-button nzSize="large">
+            <a href="assets/resume/resume.pdf" download="Hasebul_Hassan_Resume.pdf" nz-button nzSize="large">
               <span nz-icon nzType="download"></span> Download Resume
             </a>
             <button nz-button nzSize="large" (click)="selectedTab = 3">
@@ -56,27 +58,29 @@
             </button>
           </div>
 
-          <nz-badge nzStatus="processing" nzText="Available for opportunities"></nz-badge>
-
-          <div class="stat-row">
-            <div class="stat-item"><span class="stat-value">3+</span><span class="stat-label">Years Coding</span></div>
-            <div class="stat-item"><span class="stat-value">20+</span><span class="stat-label">Projects</span></div>
-            <div class="stat-item"><span class="stat-value">8+</span><span class="stat-label">Clients</span></div>
-            <div class="stat-item"><span class="stat-value">1</span><span class="stat-label">IEEE Paper</span></div>
+          <div style="display:flex;justify-content:center;gap:16px;flex-wrap:wrap;margin-bottom:8px;">
+            <nz-badge nzStatus="processing" nzText="Senior Software Engineer @ Cefalo Bangladesh"></nz-badge>
           </div>
 
-          <nz-divider nzText="Tech Stack"></nz-divider>
+          <div class="stat-row">
+            <div class="stat-item"><span class="stat-value">5+</span><span class="stat-label">Years Experience</span></div>
+            <div class="stat-item"><span class="stat-value">2100+</span><span class="stat-label">Problems Solved</span></div>
+            <div class="stat-item"><span class="stat-value">Top 7.6%</span><span class="stat-label">LeetCode Global</span></div>
+            <div class="stat-item"><span class="stat-value">2</span><span class="stat-label">IEEE Publications</span></div>
+          </div>
+
+          <nz-divider nzText="Core Stack"></nz-divider>
           <div style="display:flex;flex-wrap:wrap;justify-content:center;gap:8px;">
-            @for (t of ['Java','Spring Boot','Angular','TypeScript','Python','PostgreSQL','Docker','React','Redis','Kafka']; track t) {
+            @for (t of ['Java','Spring Boot','NestJS','TypeScript','Angular','React','PostgreSQL','Redis','Docker','AWS','Elasticsearch','GitHub Actions']; track t) {
               <nz-tag [nzColor]="'blue'">{{ t }}</nz-tag>
             }
           </div>
         </div>
       </nz-tab>
 
-      <!-- ─ ABOUT ─ -->
+      <!-- ─── ABOUT ─── -->
       <nz-tab nzTitle="👤 About">
-        <div style="max-width:900px; margin:0 auto; padding:32px 0;">
+        <div style="max-width:900px;margin:0 auto;padding:32px 0;">
           <div class="section-heading">
             <h2>About Me</h2>
             <p>Background, story, and what drives me</p>
@@ -85,39 +89,48 @@
 
           <div nz-row [nzGutter]="24">
             <div nz-col [nzXs]="24" [nzMd]="14">
-              <nz-card nzBorderless style="border-radius:12px; margin-bottom:16px;">
-                <h3 style="font-weight:700; margin-bottom:12px;">Building the future, one commit at a time</h3>
-                <p style="color:#595959; line-height:1.8; margin-bottom:12px;">
-                  I'm a passionate full-stack developer and CS student at
-                  <strong>BUET (Bangladesh University of Engineering and Technology)</strong>.
-                  I specialize in robust, scalable apps with Java/Spring Boot and Angular.
+              <nz-card nzBorderless style="border-radius:12px;margin-bottom:16px;">
+                <h3 style="font-weight:700;margin-bottom:12px;">Building the future, one commit at a time</h3>
+                <p style="color:#595959;line-height:1.8;margin-bottom:12px;">
+                  I'm a <strong>Senior Software Engineer</strong> at <strong>Cefalo Bangladesh Ltd.</strong> with 5+ years of
+                  experience building scalable, high-performance backend systems using Java (Spring Boot) and NestJS,
+                  with strong frontend expertise in Angular and React.
                 </p>
-                <p style="color:#595959; line-height:1.8; margin-bottom:12px;">
-                  My journey started with competitive programming. Since then I've expanded into
-                  full-stack development, cloud deployments, AI/ML integrations, and IoT systems.
+                <p style="color:#595959;line-height:1.8;margin-bottom:12px;">
+                  I have extensive experience with <strong>AWS cloud services</strong>, caching strategies (Redis),
+                  performance optimization, and CI/CD pipelines using GitHub Actions, Docker, and Jenkins.
+                  I also integrate AI/ML capabilities via LLM APIs, RAG, and vector search.
                 </p>
-                <p style="color:#595959; line-height:1.8;">
-                  I thrive at the intersection of clean architecture and intuitive UX.
+                <p style="color:#595959;line-height:1.8;">
+                  Beyond engineering, I'm a competitive programmer ranked in the <strong>top 7.6% globally on LeetCode</strong>
+                  with 700+ problems solved, and a researcher with two accepted IEEE publications.
                 </p>
               </nz-card>
 
               <nz-card nzBorderless style="border-radius:12px;">
                 <div nz-row [nzGutter]="12">
-                  @for (f of [{icon:'user',label:'BUET CS \'25'},{icon:'environment',label:'Dhaka, BD'},{icon:'code',label:'3+ Years'},{icon:'star',label:'Open Source'}]; track f.label) {
-                    <div nz-col [nzSpan]="12" style="margin-bottom:8px;">
+                  @for (f of [
+                    {icon:'environment', label:'Dhaka, Bangladesh'},
+                    {icon:'phone',       label:'+880 1758144856'},
+                    {icon:'mail',        label:'hasebulhassan21@gmail.com'},
+                    {icon:'github',      label:'github.com/Hasebul21'},
+                    {icon:'code',        label:'LeetCode Top 7.6%'},
+                    {icon:'star',        label:'2100+ Problems Solved'}
+                  ]; track f.label) {
+                    <div nz-col [nzXs]="24" [nzSm]="12" style="margin-bottom:8px;">
                       <div style="display:flex;align-items:center;gap:8px;padding:10px;background:#f5f5f5;border-radius:8px;">
-                        <span nz-icon [nzType]="f.icon" style="color:#1890ff;"></span>
-                        <span style="font-size:13px;font-weight:500;">{{ f.label }}</span>
+                        <span nz-icon [nzType]="f.icon" style="color:#1890ff;flex-shrink:0;"></span>
+                        <span style="font-size:12px;font-weight:500;word-break:break-all;">{{ f.label }}</span>
                       </div>
                     </div>
                   }
                 </div>
               </nz-card>
 
-              <nz-card nzBorderless style="border-radius:12px; margin-top:16px;">
+              <nz-card nzBorderless style="border-radius:12px;margin-top:16px;">
                 <div style="font-weight:600;font-size:14px;margin-bottom:12px;">Interests</div>
                 <div style="display:flex;flex-wrap:wrap;gap:8px;">
-                  @for (i of ['Software Architecture','AI & ML','IoT Systems','Open Source','Competitive Programming','Cloud Computing','Distributed Systems','Tech Writing']; track i) {
+                  @for (i of ['Software Architecture','Distributed Systems','AI / ML Integration','Cloud Engineering','Competitive Programming','System Design','Open Source']; track i) {
                     <nz-tag>{{ i }}</nz-tag>
                   }
                 </div>
@@ -125,55 +138,50 @@
             </div>
 
             <div nz-col [nzXs]="24" [nzMd]="10">
-              <nz-card nzTitle="Education" nzBorderless style="border-radius:12px; margin-bottom:16px;">
+              <!-- Education -->
+              <nz-card nzTitle="Education" nzBorderless style="border-radius:12px;margin-bottom:16px;">
                 @for (edu of education; track edu.id) {
-                  <div style="margin-bottom:16px; padding-bottom:16px; border-bottom:1px solid #f0f0f0;">
-                    <div style="display:flex;justify-content:space-between;align-items:start;margin-bottom:4px;">
-                      <strong style="font-size:13px;">{{ edu.degree }}</strong>
-                      @if (edu.current) { <nz-badge nzStatus="processing" nzText="Current"></nz-badge> }
-                    </div>
-                    <div style="color:#1890ff;font-size:12px;font-weight:600;">{{ edu.institution }}</div>
-                    <div style="color:#8c8c8c;font-size:12px;margin-top:2px;">
-                      {{ edu.field }} · {{ edu.startYear }} – {{ edu.current ? 'Present' : edu.endYear }}
-                    </div>
+                  <div style="margin-bottom:12px;">
+                    <strong style="font-size:14px;display:block;margin-bottom:2px;">{{ edu.degree }} in {{ edu.field }}</strong>
+                    <div style="color:#1890ff;font-size:13px;font-weight:600;margin-bottom:4px;">{{ edu.institution }}</div>
+                    <div style="color:#8c8c8c;font-size:12px;">{{ edu.location }} · {{ edu.startYear }} – {{ edu.endYear }}</div>
                     @if (edu.gpa) { <nz-tag nzColor="green" style="margin-top:6px;">{{ edu.gpa }}</nz-tag> }
+                    @if (edu.description) { <p style="font-size:12px;color:#8c8c8c;margin-top:8px;line-height:1.5;">{{ edu.description }}</p> }
                   </div>
                 }
               </nz-card>
 
-              <nz-card nzTitle="IEEE Publication" nzBorderless style="border-left:4px solid #1890ff; border-radius:0 12px 12px 0;">
-                <p style="font-size:13px;font-weight:600;color:#1a1a2e;margin-bottom:8px;line-height:1.5;">
-                  AI-Enhanced Prediction of Respiratory Irritation From Biomass Combustion Byproducts:
-                  An Integrative Machine Learning Framework for Sustainable Bioenergy Systems
-                </p>
-                <div style="display:flex;flex-wrap:wrap;gap:6px;margin-bottom:12px;">
-                  <nz-tag nzColor="blue">IEEE</nz-tag>
-                  <nz-tag nzColor="purple">Machine Learning</nz-tag>
-                  <nz-tag nzColor="green">AI</nz-tag>
-                  <nz-tag>Healthcare</nz-tag>
-                </div>
-                <a href="https://ieeexplore.ieee.org/document/11437157" target="_blank"
-                   nz-button nzType="link" style="padding:0;">
-                  <span nz-icon nzType="link"></span> View on IEEE Xplore
-                </a>
+              <!-- Awards -->
+              <nz-card nzTitle="Awards & Achievements" nzBorderless style="border-radius:12px;">
+                @for (award of awards; track award.title) {
+                  <div style="display:flex;gap:10px;margin-bottom:14px;padding-bottom:14px;border-bottom:1px solid #f0f0f0;">
+                    <div style="width:32px;height:32px;border-radius:8px;background:#fff7e6;display:flex;align-items:center;justify-content:center;flex-shrink:0;">
+                      <span nz-icon [nzType]="award.icon" style="color:#fa8c16;"></span>
+                    </div>
+                    <div>
+                      <div style="font-weight:600;font-size:13px;color:#1a1a2e;line-height:1.3;">{{ award.title }}</div>
+                      <div style="font-size:12px;color:#8c8c8c;margin-top:2px;">{{ award.detail }}</div>
+                    </div>
+                  </div>
+                }
               </nz-card>
             </div>
           </div>
         </div>
       </nz-tab>
 
-      <!-- ─ SKILLS ─ -->
+      <!-- ─── SKILLS ─── -->
       <nz-tab nzTitle="⚡ Skills">
-        <div style="max-width:900px; margin:0 auto; padding:32px 0;">
+        <div style="max-width:960px;margin:0 auto;padding:32px 0;">
           <div class="section-heading">
             <h2>Skills & Technologies</h2>
-            <p>Technologies across projects, internships, and research</p>
+            <p>5+ years of professional experience across the full stack</p>
             <div class="heading-bar"></div>
           </div>
           <div nz-row [nzGutter]="16">
             @for (group of skillGroups; track group.category) {
               <div nz-col [nzXs]="24" [nzSm]="12" [nzXl]="8">
-                <nz-card nzBorderless style="border-radius:12px; margin-bottom:16px;">
+                <nz-card nzBorderless style="border-radius:12px;margin-bottom:16px;">
                   <div style="display:flex;align-items:center;gap:10px;margin-bottom:16px;">
                     <div [style.background]="getCategoryColor(group.category)"
                          style="width:4px;height:28px;border-radius:2px;"></div>
@@ -186,14 +194,9 @@
                     <div style="margin-bottom:14px;">
                       <div style="display:flex;justify-content:space-between;margin-bottom:5px;font-size:13px;">
                         <span style="font-weight:500;">{{ skill.name }}</span>
-                        <span style="color:#8c8c8c;">{{ skill.proficiency }}%</span>
+                        <span style="color:#8c8c8c;">{{ skill.yearsOfExperience }}y · {{ skill.proficiency }}%</span>
                       </div>
-                      <nz-progress
-                        [nzPercent]="skill.proficiency"
-                        [nzStrokeColor]="getCategoryColor(group.category)"
-                        nzSize="small"
-                        [nzShowInfo]="false">
-                      </nz-progress>
+                      <nz-progress [nzPercent]="skill.proficiency" [nzStrokeColor]="getCategoryColor(group.category)" nzSize="small" [nzShowInfo]="false"></nz-progress>
                     </div>
                   }
                 </nz-card>
@@ -203,23 +206,20 @@
         </div>
       </nz-tab>
 
-      <!-- ─ PROJECTS ─ -->
+      <!-- ─── PROJECTS ─── -->
       <nz-tab nzTitle="🚀 Projects">
-        <div style="max-width:1000px; margin:0 auto; padding:32px 0;">
+        <div style="max-width:1000px;margin:0 auto;padding:32px 0;">
           <div class="section-heading">
             <h2>Projects</h2>
-            <p>A selection of things I've built</p>
+            <p>Professional, personal, and research work</p>
             <div class="heading-bar"></div>
           </div>
 
           <div style="display:flex;flex-wrap:wrap;gap:8px;margin-bottom:24px;">
             @for (tag of allTags; track tag) {
-              <nz-tag
-                [nzColor]="activeFilter === tag ? 'blue' : 'default'"
-                (click)="setFilter(tag)"
-                style="cursor:pointer;padding:4px 12px;font-size:13px;">
-                {{ tag }}
-              </nz-tag>
+              <nz-tag [nzColor]="activeFilter === tag ? 'blue' : 'default'"
+                      (click)="setFilter(tag)"
+                      style="cursor:pointer;padding:4px 12px;font-size:13px;">{{ tag }}</nz-tag>
             }
           </div>
 
@@ -240,9 +240,7 @@
                     @for (tech of project.techStack.slice(0,4); track tech) {
                       <nz-tag style="font-size:11px;">{{ tech }}</nz-tag>
                     }
-                    @if (project.techStack.length > 4) {
-                      <nz-tag style="font-size:11px;">+{{ project.techStack.length - 4 }}</nz-tag>
-                    }
+                    @if (project.techStack.length > 4) { <nz-tag style="font-size:11px;">+{{ project.techStack.length - 4 }}</nz-tag> }
                   </div>
                   <div style="display:flex;gap:8px;">
                     @if (project.githubUrl) {
@@ -253,7 +251,7 @@
                     @if (project.liveUrl) {
                       <a [href]="project.liveUrl" target="_blank" nz-button nzType="primary" nzSize="small">
                         <span nz-icon nzType="link"></span>
-                        {{ project.category === 'Research' ? 'IEEE' : 'Demo' }}
+                        {{ project.category === 'Research' ? 'Paper' : 'Demo' }}
                       </a>
                     }
                   </div>
@@ -270,12 +268,12 @@
         </div>
       </nz-tab>
 
-      <!-- ─ EXPERIENCE ─ -->
+      <!-- ─── EXPERIENCE ─── -->
       <nz-tab nzTitle="💼 Experience">
-        <div style="max-width:800px; margin:0 auto; padding:32px 0;">
+        <div style="max-width:820px;margin:0 auto;padding:32px 0;">
           <div class="section-heading">
             <h2>Work Experience</h2>
-            <p>My professional journey and impact</p>
+            <p>5+ years of professional software engineering</p>
             <div class="heading-bar"></div>
           </div>
 
@@ -286,7 +284,13 @@
                   <div style="display:flex;flex-wrap:wrap;justify-content:space-between;gap:8px;margin-bottom:4px;">
                     <div>
                       <p class="exp-role">{{ exp.role }}</p>
-                      <p class="exp-company">{{ exp.company }}</p>
+                      <p class="exp-company">
+                        @if (exp.companyUrl) {
+                          <a [href]="exp.companyUrl" target="_blank" style="color:#1890ff;font-weight:600;">{{ exp.company }}</a>
+                        } @else {
+                          {{ exp.company }}
+                        }
+                      </p>
                     </div>
                     <div style="text-align:right;">
                       <nz-tag [nzColor]="getTypeBadgeColor(exp.type)" style="text-transform:capitalize;">{{ exp.type }}</nz-tag>
@@ -317,9 +321,46 @@
         </div>
       </nz-tab>
 
-      <!-- ─ RESUME ─ -->
+      <!-- ─── PUBLICATIONS ─── -->
+      <nz-tab nzTitle="📚 Publications">
+        <div style="max-width:820px;margin:0 auto;padding:32px 0;">
+          <div class="section-heading">
+            <h2>Research & Publications</h2>
+            <p>IEEE-accepted conference papers (2024–2025)</p>
+            <div class="heading-bar"></div>
+          </div>
+
+          <div style="display:flex;flex-direction:column;gap:16px;">
+            @for (pub of publications; track pub.title; let i = $index) {
+              <nz-card nzBorderless style="border-left:4px solid #1890ff;border-radius:0 12px 12px 0;">
+                <div style="display:flex;justify-content:space-between;align-items:start;flex-wrap:wrap;gap:8px;margin-bottom:10px;">
+                  <div style="display:flex;gap:8px;flex-wrap:wrap;">
+                    <nz-tag nzColor="blue">{{ pub.venue }}</nz-tag>
+                    <nz-tag nzColor="green">{{ pub.status }}</nz-tag>
+                    <nz-tag>{{ pub.year }}</nz-tag>
+                  </div>
+                  <span style="font-size:22px;font-weight:800;color:#f0f0f0;">#{{ i + 1 }}</span>
+                </div>
+                <p style="font-size:15px;font-weight:600;color:#1a1a2e;margin-bottom:10px;line-height:1.5;">{{ pub.title }}</p>
+                <div style="display:flex;flex-wrap:wrap;gap:6px;margin-bottom:12px;">
+                  @for (tag of pub.tags; track tag) { <nz-tag>{{ tag }}</nz-tag> }
+                </div>
+                @if (pub.url) {
+                  <a [href]="pub.url" target="_blank" nz-button nzType="link" style="padding:0;">
+                    <span nz-icon nzType="link"></span> View on IEEE Xplore
+                  </a>
+                } @else {
+                  <span style="font-size:12px;color:#8c8c8c;"><span nz-icon nzType="check-circle" style="color:#52c41a;"></span> Accepted — Proceedings forthcoming</span>
+                }
+              </nz-card>
+            }
+          </div>
+        </div>
+      </nz-tab>
+
+      <!-- ─── RESUME ─── -->
       <nz-tab nzTitle="📄 Resume">
-        <div style="max-width:800px; margin:0 auto; padding:32px 0;">
+        <div style="max-width:800px;margin:0 auto;padding:32px 0;">
           <div class="section-heading">
             <h2>Resume</h2>
             <p>View or download my latest resume</p>
@@ -334,26 +375,25 @@
               <span nz-icon nzType="eye"></span> Open in New Tab
             </a>
           </div>
-          <nz-card nzBorderless style="border-radius:12px;overflow:hidden;padding:0;" [nzBodyStyle]="{'padding':'0'}">
+          <nz-card nzBorderless style="border-radius:12px;overflow:hidden;" [nzBodyStyle]="{'padding':'0'}">
             <div style="background:#f5f5f5;padding:10px 16px;border-bottom:1px solid #f0f0f0;display:flex;align-items:center;gap:6px;">
               <div style="width:10px;height:10px;border-radius:50%;background:#ff5f57;"></div>
               <div style="width:10px;height:10px;border-radius:50%;background:#febc2e;"></div>
               <div style="width:10px;height:10px;border-radius:50%;background:#28c840;"></div>
-              <span style="margin-left:8px;font-family:monospace;font-size:12px;color:#8c8c8c;">resume.pdf</span>
+              <span style="margin-left:8px;font-family:monospace;font-size:12px;color:#8c8c8c;">Hasebul_Hassan_Resume.pdf</span>
             </div>
             <iframe src="assets/resume/resume.pdf#toolbar=0" width="100%" height="680"
-                    style="border:none;display:block;" title="Hasebul Hassan Resume">
-            </iframe>
+                    style="border:none;display:block;" title="Hasebul Hassan Resume"></iframe>
           </nz-card>
         </div>
       </nz-tab>
 
-      <!-- ─ CONTACT ─ -->
+      <!-- ─── CONTACT ─── -->
       <nz-tab nzTitle="✉️ Contact">
-        <div style="max-width:900px; margin:0 auto; padding:32px 0;">
+        <div style="max-width:900px;margin:0 auto;padding:32px 0;">
           <div class="section-heading">
             <h2>Get In Touch</h2>
-            <p>Open to collaborations, jobs, and interesting conversations</p>
+            <p>Open to senior engineering roles, collaborations, and research discussions</p>
             <div class="heading-bar"></div>
           </div>
 
@@ -362,7 +402,7 @@
               <nz-card nzBorderless style="border-radius:12px;">
                 @if (sent) {
                   <nz-result nzStatus="success" nzTitle="Message Sent!"
-                             nzSubTitle="Thanks for reaching out. I'll reply within 24 hours.">
+                             nzSubTitle="Thanks! I'll reply within 24 hours.">
                     <div nz-result-extra>
                       <button nz-button nzType="primary" (click)="resetContact()">Send Another</button>
                     </div>
@@ -375,7 +415,7 @@
                       <nz-form-control nzErrorTip="Please enter your name">
                         <nz-input-group [nzPrefix]="prefixUser">
                           <ng-template #prefixUser><span nz-icon nzType="user"></span></ng-template>
-                          <input nz-input formControlName="name" placeholder="Hasebul Hassan"/>
+                          <input nz-input formControlName="name" placeholder="Your full name"/>
                         </nz-input-group>
                       </nz-form-control>
                     </nz-form-item>
@@ -390,7 +430,7 @@
                     </nz-form-item>
                     <nz-form-item>
                       <nz-form-label nzRequired>Subject</nz-form-label>
-                      <nz-form-control nzErrorTip="Subject required (min 5 chars)">
+                      <nz-form-control nzErrorTip="Subject required">
                         <input nz-input formControlName="subject" placeholder="Job opportunity, collaboration..."/>
                       </nz-form-control>
                     </nz-form-item>
@@ -398,7 +438,7 @@
                       <nz-form-label nzRequired>Message</nz-form-label>
                       <nz-form-control nzErrorTip="Message must be at least 20 characters">
                         <textarea nz-input formControlName="message" [nzAutosize]="{minRows:4,maxRows:8}"
-                                  placeholder="Tell me about your project or idea..."></textarea>
+                                  placeholder="Tell me about your project or opportunity..."></textarea>
                       </nz-form-control>
                     </nz-form-item>
                     <button nz-button nzType="primary" nzBlock nzSize="large" [nzLoading]="sending" type="submit">
@@ -413,10 +453,11 @@
             <div nz-col [nzXs]="24" [nzMd]="10">
               <div style="display:flex;flex-direction:column;gap:12px;">
                 @for (s of [
-                  {label:'GitHub',   value:'github.com/Hasebul21',     url:'https://github.com/Hasebul21',                  icon:'github',    bg:'#24292e'},
-                  {label:'LinkedIn', value:'linkedin.com/in/hasebul',  url:'https://linkedin.com/in/hasebul',               icon:'linkedin',  bg:'#0a66c2'},
-                  {label:'Email',    value:'hasebul@example.com',      url:'mailto:hasebul@example.com',                    icon:'mail',      bg:'#ea4335'},
-                  {label:'IEEE',     value:'View Research Paper',      url:'https://ieeexplore.ieee.org/document/11437157', icon:'file-text', bg:'#00629b'}
+                  {label:'Email',    value:'hasebulhassan21@gmail.com',            url:'mailto:hasebulhassan21@gmail.com',               icon:'mail',     bg:'#ea4335'},
+                  {label:'Phone',    value:'+880 1758144856',                      url:'tel:+8801758144856',                             icon:'phone',    bg:'#52c41a'},
+                  {label:'GitHub',   value:'github.com/Hasebul21',                 url:'https://github.com/Hasebul21',                   icon:'github',   bg:'#24292e'},
+                  {label:'LinkedIn', value:'linkedin.com/in/hasebul',              url:'https://linkedin.com/in/hasebul',                icon:'linkedin', bg:'#0a66c2'},
+                  {label:'IEEE',     value:'View Research Publications',           url:'https://ieeexplore.ieee.org/document/11437157',  icon:'file-text',bg:'#00629b'}
                 ]; track s.label) {
                   <a [href]="s.url" target="_blank"
                      style="display:flex;align-items:center;gap:14px;padding:16px;background:#fff;border-radius:12px;border:1px solid #f0f0f0;text-decoration:none;transition:all .2s;"
@@ -439,7 +480,7 @@
   </nz-content>
 
   <nz-footer style="text-align:center;background:#fff;border-top:1px solid #f0f0f0;color:#8c8c8c;font-size:13px;">
-    © 2025 Hasebul Hassan — Built with Angular & Spring Boot · Deployed on Vercel
+    © 2025 Hasebul Hassan Chowdhury · Senior Software Engineer @ Cefalo Bangladesh · Dhaka, Bangladesh
   </nz-footer>
 
 </nz-layout>

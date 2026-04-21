@@ -21,12 +21,10 @@ export class ProjectsService extends ApiService {
     return this.get<Project[]>('/projects/featured');
   }
 
-  /** Returns all unique tech stack tags across projects */
   getTechTags(): Observable<string[]> {
     return this.get<string[]>('/projects/tech-tags');
   }
 
-  /** Fallback static data for demo/development */
   getStaticProjects(): Observable<Project[]> {
     return of(STATIC_PROJECTS);
   }
@@ -34,70 +32,55 @@ export class ProjectsService extends ApiService {
 
 const STATIC_PROJECTS: Project[] = [
   {
-    id: 0,
-    title: 'AI-Enhanced Prediction of Respiratory Irritation From Biomass Combustion Byproducts',
-    description: 'IEEE-published research proposing an integrative machine learning framework to predict respiratory irritation caused by biomass combustion byproducts, supporting sustainable bioenergy systems.',
-    longDescription: 'An Integrative Machine Learning Framework for Sustainable Bioenergy Systems — published in IEEE conference proceedings.',
-    techStack: ['Machine Learning', 'Python', 'scikit-learn', 'AI', 'Healthcare'],
-    liveUrl: 'https://ieeexplore.ieee.org/document/11437157',
-    featured: true,
-    category: 'Research',
-  },
-  {
     id: 1,
-    title: 'AI-Powered Study Assistant',
-    description: 'An intelligent study companion that leverages NLP to generate summaries, quizzes, and study plans from uploaded documents.',
-    techStack: ['Python', 'FastAPI', 'OpenAI API', 'React', 'PostgreSQL'],
-    githubUrl: 'https://github.com/hasebul/ai-study-assistant',
-    liveUrl: 'https://ai-study-assistant.vercel.app',
+    title: 'QuickChat',
+    description: 'Real-time chat application using WebSockets for bidirectional communication, user authentication, Redis caching for performance, and Elasticsearch for efficient message indexing and retrieval.',
+    techStack: ['Java', 'Spring Boot', 'WebSocket', 'Redis', 'Elasticsearch', 'Angular'],
+    githubUrl: 'https://github.com/Hasebul21',
     featured: true,
-    category: 'AI/ML',
-    imageUrl: 'assets/images/project-ai.jpg',
-  },
-  {
-    id: 2,
-    title: 'Smart Home Automation System',
-    description: 'IoT platform for controlling home devices using MQTT protocol with real-time dashboard and mobile app.',
-    techStack: ['Spring Boot', 'Angular', 'MQTT', 'Raspberry Pi', 'MySQL'],
-    githubUrl: 'https://github.com/hasebul/smart-home',
-    featured: true,
-    category: 'IoT',
-  },
-  {
-    id: 3,
-    title: 'E-Commerce Microservices Platform',
-    description: 'Scalable e-commerce backend built with microservices architecture, including product, order, and payment services.',
-    techStack: ['Spring Boot', 'Docker', 'Kafka', 'Redis', 'PostgreSQL', 'Angular'],
-    githubUrl: 'https://github.com/hasebul/ecommerce-microservices',
-    featured: true,
-    category: 'Backend',
-  },
-  {
-    id: 4,
-    title: 'Real-Time Chat Application',
-    description: 'Full-stack chat application with WebSocket support, rooms, direct messaging, and file sharing.',
-    techStack: ['Node.js', 'Socket.IO', 'React', 'MongoDB', 'Redis'],
-    githubUrl: 'https://github.com/hasebul/realtime-chat',
-    liveUrl: 'https://realtime-chat.vercel.app',
-    featured: false,
     category: 'Full Stack',
   },
   {
+    id: 2,
+    title: 'TodayTechBlog',
+    description: 'Full-stack blogging platform with end-to-end CRUD functionality. Achieved 90% code coverage through comprehensive unit testing across both frontend and backend components.',
+    techStack: ['Java', 'Spring Boot', 'Angular', 'PostgreSQL', 'JUnit', 'Mockito'],
+    githubUrl: 'https://github.com/Hasebul21',
+    featured: true,
+    category: 'Full Stack',
+  },
+  {
+    id: 3,
+    title: 'ATS Platform',
+    description: 'Applicant Tracking System with role-based access control and HackerRank integration for streamlined interview and candidate management. Reduced archive import time from 3–4 min to under 1 min.',
+    techStack: ['TypeScript', 'NestJS', 'React', 'PostgreSQL', 'Ehcache', 'AWS'],
+    featured: true,
+    category: 'Enterprise',
+  },
+  {
+    id: 4,
+    title: 'Zaui Booking Platform',
+    description: 'Feature development on a global booking platform — quotation generation, booking workflow, discount modules, Redis caching, and Angular i18n support for multi-language accessibility.',
+    techStack: ['Java', 'Spring Boot', 'Angular', 'NestJS', 'Redis', 'PostgreSQL'],
+    featured: true,
+    category: 'Enterprise',
+  },
+  {
     id: 5,
-    title: 'Network Packet Analyzer',
-    description: 'CLI tool for capturing and analyzing network packets with protocol breakdown and anomaly detection.',
-    techStack: ['Python', 'Scapy', 'Pandas', 'Matplotlib'],
-    githubUrl: 'https://github.com/hasebul/packet-analyzer',
-    featured: false,
-    category: 'Networking',
+    title: 'ML-Based CKD Risk Stratification',
+    description: 'IEEE-accepted research: Multi-domain ML framework integrating demographic, biochemical, and longitudinal clinical data to enable early identification of high-risk Chronic Kidney Disease patients.',
+    techStack: ['Python', 'Machine Learning', 'scikit-learn', 'Healthcare', 'IEEE'],
+    featured: true,
+    category: 'Research',
+    liveUrl: 'https://ieeexplore.ieee.org',
   },
   {
     id: 6,
-    title: 'Personal Finance Tracker',
-    description: 'Cross-platform mobile app for tracking income, expenses, and investments with beautiful charts.',
-    techStack: ['Flutter', 'Dart', 'Firebase', 'Riverpod'],
-    githubUrl: 'https://github.com/hasebul/finance-tracker',
-    featured: false,
-    category: 'Mobile',
+    title: 'Respiratory Irritation Prediction',
+    description: 'Hybrid Random Forest–LSTM pipeline combining environmental and clinical biomarkers to predict respiratory irritation and identify key combustion-related risk factors. Published at ICCCES 2026.',
+    techStack: ['Python', 'Random Forest', 'LSTM', 'Machine Learning', 'AI'],
+    featured: true,
+    category: 'Research',
+    liveUrl: 'https://ieeexplore.ieee.org/document/11437157',
   },
 ];

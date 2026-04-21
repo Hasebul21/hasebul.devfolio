@@ -2,27 +2,25 @@ import { Component, signal, OnInit, inject } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule, ReactiveFormsModule, FormBuilder, Validators } from '@angular/forms';
 
-// ng-zorro-antd
-import { NzLayoutModule }    from 'ng-zorro-antd/layout';
-import { NzTabsModule }      from 'ng-zorro-antd/tabs';
-import { NzCardModule }      from 'ng-zorro-antd/card';
-import { NzButtonModule }    from 'ng-zorro-antd/button';
-import { NzTagModule }       from 'ng-zorro-antd/tag';
-import { NzProgressModule }  from 'ng-zorro-antd/progress';
-import { NzTimelineModule }  from 'ng-zorro-antd/timeline';
-import { NzGridModule }      from 'ng-zorro-antd/grid';
-import { NzAvatarModule }    from 'ng-zorro-antd/avatar';
-import { NzDividerModule }   from 'ng-zorro-antd/divider';
-import { NzBadgeModule }     from 'ng-zorro-antd/badge';
-import { NzFormModule }      from 'ng-zorro-antd/form';
-import { NzInputModule }     from 'ng-zorro-antd/input';
-import { NzSwitchModule }    from 'ng-zorro-antd/switch';
-import { NzIconModule }      from 'ng-zorro-antd/icon';
-import { NzTooltipModule }   from 'ng-zorro-antd/tooltip';
-import { NzResultModule }    from 'ng-zorro-antd/result';
-import { NzMessageService }  from 'ng-zorro-antd/message';
+import { NzLayoutModule }   from 'ng-zorro-antd/layout';
+import { NzTabsModule }     from 'ng-zorro-antd/tabs';
+import { NzCardModule }     from 'ng-zorro-antd/card';
+import { NzButtonModule }   from 'ng-zorro-antd/button';
+import { NzTagModule }      from 'ng-zorro-antd/tag';
+import { NzProgressModule } from 'ng-zorro-antd/progress';
+import { NzTimelineModule } from 'ng-zorro-antd/timeline';
+import { NzGridModule }     from 'ng-zorro-antd/grid';
+import { NzAvatarModule }   from 'ng-zorro-antd/avatar';
+import { NzDividerModule }  from 'ng-zorro-antd/divider';
+import { NzBadgeModule }    from 'ng-zorro-antd/badge';
+import { NzFormModule }     from 'ng-zorro-antd/form';
+import { NzInputModule }    from 'ng-zorro-antd/input';
+import { NzSwitchModule }   from 'ng-zorro-antd/switch';
+import { NzIconModule }     from 'ng-zorro-antd/icon';
+import { NzTooltipModule }  from 'ng-zorro-antd/tooltip';
+import { NzResultModule }   from 'ng-zorro-antd/result';
+import { NzMessageService } from 'ng-zorro-antd/message';
 
-// Services & models
 import { SkillsService }     from './core/services/skills.service';
 import { ProjectsService }   from './core/services/projects.service';
 import { ExperienceService } from './core/services/experience.service';
@@ -31,6 +29,22 @@ import { SkillGroup }        from './core/models/skill.model';
 import { Project }           from './core/models/project.model';
 import { Experience }        from './core/models/experience.model';
 import { Education }         from './core/models/contact.model';
+
+export interface Publication {
+  title: string;
+  venue: string;
+  year: string;
+  status: string;
+  type: string;
+  url?: string;
+  tags: string[];
+}
+
+export interface Award {
+  title: string;
+  detail: string;
+  icon: string;
+}
 
 @Component({
   selector: 'app-root',
@@ -56,10 +70,10 @@ export class App implements OnInit {
   isDark = signal(false);
   selectedTab = 0;
 
-  skillGroups: SkillGroup[]  = [];
-  allProjects: Project[]     = [];
-  experiences: Experience[]  = [];
-  education: Education[]     = [];
+  skillGroups: SkillGroup[] = [];
+  allProjects: Project[]    = [];
+  experiences: Experience[] = [];
+  education: Education[]    = [];
 
   activeFilter = 'All';
 
@@ -73,6 +87,49 @@ export class App implements OnInit {
     if (this.activeFilter === 'All') return this.allProjects;
     return this.allProjects.filter(p => p.techStack.includes(this.activeFilter));
   }
+
+  readonly publications: Publication[] = [
+    {
+      title: 'Machine Learning-Based Early Risk Stratification Framework for Chronic Kidney Disease Progression',
+      venue: 'IEEE ICSFT 2026',
+      year: '2025',
+      status: 'Accepted — Oral Presentation',
+      type: 'Conference',
+      tags: ['Machine Learning', 'Healthcare', 'CKD', 'IEEE'],
+    },
+    {
+      title: 'AI-Enhanced Prediction of Respiratory Irritation from Biomass Combustion Byproducts',
+      venue: 'ICCCES 2026',
+      year: '2025',
+      status: 'Accepted',
+      type: 'Conference',
+      url: 'https://ieeexplore.ieee.org/document/11437157',
+      tags: ['Random Forest', 'LSTM', 'AI', 'Healthcare'],
+    },
+  ];
+
+  readonly awards: Award[] = [
+    {
+      title: '2100+ Programming Problems Solved',
+      detail: 'Across Codeforces, AtCoder, CodeChef, and LeetCode',
+      icon: 'code',
+    },
+    {
+      title: 'LeetCode Top 7.6% Globally',
+      detail: 'Solved over 700+ problems on LeetCode',
+      icon: 'trophy',
+    },
+    {
+      title: '10th Place — Intra AIUB Programming Contest',
+      detail: 'Fall 2021–22, out of 70+ contestants',
+      icon: 'star',
+    },
+    {
+      title: '6th Place — AIUB CS Fest 2018',
+      detail: 'Programming Contest, out of 60+ contestants',
+      icon: 'fire',
+    },
+  ];
 
   sending = false;
   sent    = false;
@@ -93,9 +150,7 @@ export class App implements OnInit {
     this.experienceSvc.getStaticEducation().subscribe(e => this.education = e);
   }
 
-  toggleTheme(): void {
-    this.applyTheme(!this.isDark());
-  }
+  toggleTheme(): void { this.applyTheme(!this.isDark()); }
 
   private applyTheme(dark: boolean): void {
     this.isDark.set(dark);
@@ -103,41 +158,26 @@ export class App implements OnInit {
     localStorage.setItem('portfolio-theme', dark ? 'dark' : 'light');
   }
 
-  setFilter(tag: string): void {
-    this.activeFilter = tag;
-  }
+  setFilter(tag: string): void { this.activeFilter = tag; }
 
   submitContact(): void {
     if (this.contactForm.invalid) {
-      Object.values(this.contactForm.controls).forEach(c => {
-        c.markAsDirty(); c.updateValueAndValidity();
-      });
+      Object.values(this.contactForm.controls).forEach(c => { c.markAsDirty(); c.updateValueAndValidity(); });
       return;
     }
     this.sending = true;
-    const payload = this.contactForm.value as any;
-    this.contactSvc.submitContact(payload).subscribe({
-      next: () => {
-        this.sent    = true;
-        this.sending = false;
-        this.msg.success('Message sent successfully!');
-      },
-      error: () => {
-        this.sending = false;
-        this.msg.error('Failed to send. Please email me directly.');
-      },
+    this.contactSvc.submitContact(this.contactForm.value as any).subscribe({
+      next: () => { this.sent = true; this.sending = false; this.msg.success('Message sent!'); },
+      error: () => { this.sending = false; this.msg.error('Failed to send. Email me directly.'); },
     });
   }
 
-  resetContact(): void {
-    this.sent = false;
-    this.contactForm.reset();
-  }
+  resetContact(): void { this.sent = false; this.contactForm.reset(); }
 
   getCategoryColor(cat: string): string {
     const m: Record<string, string> = {
-      languages: '#722ed1', frameworks: '#1890ff', tools: '#fa8c16',
-      databases: '#52c41a', cloud: '#13c2c2', 'ai-ml': '#eb2f96', other: '#8c8c8c',
+      languages: '#722ed1', frameworks: '#1890ff', tools: '#13c2c2',
+      databases: '#52c41a', cloud: '#fa8c16', 'ai-ml': '#eb2f96', other: '#8c8c8c',
     };
     return m[cat] ?? '#8c8c8c';
   }
