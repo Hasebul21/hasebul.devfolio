@@ -358,7 +358,10 @@
                   </div>
                   <span style="font-size:20px;font-weight:800;color:#e8e8e8;">#{{ i + 1 }}</span>
                 </div>
-                <p style="font-size:15px;font-weight:600;color:#1a1a2e;margin-bottom:10px;line-height:1.5;">{{ pub.title }}</p>
+                <p style="font-size:15px;font-weight:600;color:#1a1a2e;margin-bottom:8px;line-height:1.5;">{{ pub.title }}</p>
+                @if (pub.description) {
+                  <p style="font-size:13px;color:#595959;line-height:1.6;margin-bottom:10px;">{{ pub.description }}</p>
+                }
                 <div style="display:flex;flex-wrap:wrap;gap:6px;margin-bottom:12px;">
                   @for (tag of pub.tags; track tag) { <nz-tag>{{ tag }}</nz-tag> }
                 </div>

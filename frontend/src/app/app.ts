@@ -38,6 +38,7 @@ export interface Publication {
   type: string;
   url?: string;
   tags: string[];
+  description?: string;
 }
 
 export interface Award {
@@ -90,6 +91,15 @@ export class App implements OnInit {
 
   readonly publications: Publication[] = [
     {
+      title: 'Machine Learning-Based Early Risk Stratification Framework for Chronic Kidney Disease Progression',
+      venue: 'IEEE ICSFT 2026',
+      year: '2024–2025',
+      status: 'Accepted — Oral Presentation',
+      type: 'Conference',
+      tags: ['Machine Learning', 'Healthcare', 'CKD', 'IEEE', 'Oral Presentation'],
+      description: 'Proposed a multi-domain ML framework integrating demographic, biochemical, and longitudinal clinical data to enable early identification of high-risk CKD patients.',
+    },
+    {
       title: 'AI-Enhanced Prediction of Respiratory Irritation from Biomass Combustion Byproducts',
       venue: 'ICCCES 2026',
       year: '2024–2025',
@@ -97,14 +107,7 @@ export class App implements OnInit {
       type: 'Conference',
       url: 'https://ieeexplore.ieee.org/document/11437157',
       tags: ['Random Forest', 'LSTM', 'Machine Learning', 'Healthcare', 'AI'],
-    },
-    {
-      title: 'Comparative ML Analysis of Gen Z Sustainable Fashion Adoption in Bangladesh',
-      venue: 'Accepted (2025–2026)',
-      year: '2025–2026',
-      status: 'Accepted',
-      type: 'Journal/Conference',
-      tags: ['Machine Learning', 'SHAP', 'Explainability', 'Data Science'],
+      description: 'Developed a hybrid Random Forest–LSTM pipeline combining environmental and clinical biomarkers to predict respiratory irritation and identify key combustion-related risk factors.',
     },
   ];
 
@@ -127,23 +130,23 @@ export class App implements OnInit {
 
   readonly awards: Award[] = [
     {
-      title: '2100+ Competitive Programming Problems',
-      detail: 'Codeforces, CodeChef, SPOJ, UVa, AtCoder, LeetCode — stopstalk.com/user/profile/WATTLE',
+      title: 'Solved 2100+ Programming Problems',
+      detail: 'Across Codeforces, AtCoder, CodeChef, and LeetCode',
       icon: 'code',
     },
     {
       title: 'LeetCode Top 7.6% Globally',
-      detail: '800+ problems solved — leetcode.com/u/Hasebul',
+      detail: 'Solving over 700+ problems on LeetCode',
       icon: 'trophy',
     },
     {
-      title: '10th Place — Intra AIUB Programming Contest (Fall 2021–22)',
-      detail: 'Out of 70+ contestants — oj.synapse0.com',
+      title: '10th Place — Intra AIUB Programming Contest',
+      detail: 'Fall 2021–22, out of 70+ contestants',
       icon: 'star',
     },
     {
-      title: '6th Place — AIUB CS Fest Programming Contest (2018)',
-      detail: 'Out of 60+ contestants — toph.co',
+      title: '6th Place — AIUB CS Fest 2018',
+      detail: 'Programming Contest, out of 60+ contestants',
       icon: 'fire',
     },
   ];
