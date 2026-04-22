@@ -24,7 +24,6 @@ import { NzMessageService } from 'ng-zorro-antd/message';
 import { SkillsService }     from './core/services/skills.service';
 import { ProjectsService }   from './core/services/projects.service';
 import { ExperienceService } from './core/services/experience.service';
-import { ContactService }    from './core/services/contact.service';
 import { SkillGroup }        from './core/models/skill.model';
 import { Project }           from './core/models/project.model';
 import { Experience }        from './core/models/experience.model';
@@ -64,7 +63,6 @@ export class App implements OnInit {
   private readonly skillsSvc     = inject(SkillsService);
   private readonly projectsSvc   = inject(ProjectsService);
   private readonly experienceSvc = inject(ExperienceService);
-  private readonly contactSvc    = inject(ContactService);
   private readonly fb            = inject(FormBuilder);
   private readonly msg           = inject(NzMessageService);
 
@@ -175,11 +173,13 @@ Additionally, I am interested in MLOps practices (model versioning, monitoring, 
       Object.values(this.contactForm.controls).forEach(c => { c.markAsDirty(); c.updateValueAndValidity(); });
       return;
     }
-    this.sending = true;
-    this.contactSvc.submitContact(this.contactForm.value as any).subscribe({
-      next: () => { this.sent = true; this.sending = false; this.msg.success('Message sent!'); },
-      error: () => { this.sending = false; this.msg.error('Failed to send. Email me directly.'); },
-    });
+    const { name, email, subject, message } = this.contactForm.value as any;
+    const mailto = `mailto:hasebulhassan21@gmail.com?subject=${encodeURIComponent(subject || 'Portfolio Contact')}&body=${encodeURIComponent(
+      `Name: ${name || ''}\nEmail: ${email || ''}\n\n${message || ''}`,
+    )}`;
+    window.location.href = mailto;
+    this.sent = true;
+    this.msg.success('Opened your email client.');
   }
 
   resetContact(): void { this.sent = false; this.contactForm.reset(); }

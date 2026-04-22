@@ -1,16 +1,12 @@
 import { Injectable } from '@angular/core';
 import { Observable, of } from 'rxjs';
-import { ApiService } from './api.service';
 import { Skill, SkillGroup } from '../models/skill.model';
 
 @Injectable({ providedIn: 'root' })
-export class SkillsService extends ApiService {
-
-  getSkills(): Observable<Skill[]> {
-    return this.get<Skill[]>('/skills');
-  }
+export class SkillsService {
 
   getStaticSkills(): Observable<SkillGroup[]> {
+    // Frontend runs with embedded static data only.
     return of(STATIC_SKILL_GROUPS);
   }
 }

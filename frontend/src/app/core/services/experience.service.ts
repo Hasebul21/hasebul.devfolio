@@ -1,21 +1,13 @@
 import { Injectable } from '@angular/core';
 import { Observable, of } from 'rxjs';
-import { ApiService } from './api.service';
 import { Experience } from '../models/experience.model';
 import { Education } from '../models/contact.model';
 
 @Injectable({ providedIn: 'root' })
-export class ExperienceService extends ApiService {
-
-  getExperiences(): Observable<Experience[]> {
-    return this.get<Experience[]>('/experience');
-  }
-
-  getEducation(): Observable<Education[]> {
-    return this.get<Education[]>('/education');
-  }
+export class ExperienceService {
 
   getStaticExperiences(): Observable<Experience[]> {
+    // Frontend runs with embedded static data only.
     return of(STATIC_EXPERIENCES);
   }
 

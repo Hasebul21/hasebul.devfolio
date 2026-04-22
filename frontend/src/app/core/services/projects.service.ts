@@ -1,31 +1,12 @@
 import { Injectable } from '@angular/core';
 import { Observable, of } from 'rxjs';
-import { ApiService } from './api.service';
 import { Project, ProjectFilter } from '../models/project.model';
 
 @Injectable({ providedIn: 'root' })
-export class ProjectsService extends ApiService {
-
-  getProjects(filter?: ProjectFilter): Observable<Project[]> {
-    const params: Record<string, string> = {};
-    if (filter?.tech) params['tech'] = filter.tech;
-    if (filter?.category) params['category'] = filter.category;
-    return this.get<Project[]>('/projects', params);
-  }
-
-  getProject(id: number): Observable<Project> {
-    return this.get<Project>(`/projects/${id}`);
-  }
-
-  getFeaturedProjects(): Observable<Project[]> {
-    return this.get<Project[]>('/projects/featured');
-  }
-
-  getTechTags(): Observable<string[]> {
-    return this.get<string[]>('/projects/tech-tags');
-  }
+export class ProjectsService {
 
   getStaticProjects(): Observable<Project[]> {
+    // Frontend runs with embedded static data only.
     return of(STATIC_PROJECTS);
   }
 }

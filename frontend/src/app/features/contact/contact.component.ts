@@ -1,7 +1,6 @@
 import { Component, inject, signal } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ReactiveFormsModule, FormBuilder, Validators } from '@angular/forms';
-import { ContactService } from '../../core/services/contact.service';
 import { SectionHeaderComponent } from '../../shared/components/section-header/section-header.component';
 
 @Component({
@@ -12,7 +11,6 @@ import { SectionHeaderComponent } from '../../shared/components/section-header/s
 })
 export class ContactComponent {
   private readonly fb = inject(FormBuilder);
-  private readonly contactService = inject(ContactService);
 
   readonly sending = signal(false);
   readonly sent    = signal(false);
@@ -42,14 +40,13 @@ export class ContactComponent {
     this.error.set('');
 
     const payload = this.form.value as { name: string; email: string; subject: string; message: string; };
-
-    this.contactService.submitContact(payload).subscribe({
-      next: () => { this.sent.set(true); this.sending.set(false); this.form.reset(); },
-      error: (err) => {
-        this.error.set(err.message || 'Failed to send message. Please try again.');
-        this.sending.set(false);
-      },
-    });
+    const mailto = `mailto:hasebulhassan21@gmail.com?subject=${encodeURIComponent(payload.subject || 'Portfolio Contact')}&body=${encodeURIComponent(
+      `Name: ${payload.name || ''}\nEmail: ${payload.email || ''}\n\n${payload.message || ''}`,
+    )}`;
+    window.location.href = mailto;
+    this.sent.set(true);
+    this.sending.set(false);
+    this.form.reset();
   }
 
   resetForm(): void {
