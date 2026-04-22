@@ -64,49 +64,49 @@
           <nz-divider></nz-divider>
 
           <!-- ── ABOUT / BIO ── -->
-          <div nz-row [nzGutter]="16" style="margin-top:32px;">
-            <div nz-col [nzXs]="24" [nzLg]="12">
+          <div nz-row [nzGutter]="[16,16]" style="margin-top:32px;" class="about-grid">
+            <div nz-col [nzXs]="24">
               <div class="section-heading" style="margin-bottom:20px;">
                 <h2>About Me</h2>
                 <div class="heading-bar" style="margin:10px 0 0;"></div>
               </div>
-              <nz-card nzBorderless style="border-radius:12px;height:100%;">
-                <p style="color:#595959;line-height:1.85;font-size:14px;">
+              <nz-card nzBorderless class="about-primary-card">
+                <p class="about-summary-text">
                   Engineering professional with 5+ years of experience designing, architecting, and scaling high-performance systems across monolithic and distributed architectures for global enterprises, including DN Media Group, Zaui Stay, and Stiftelsen Asta. Strong expertise in system design, backend engineering, and AWS cloud infrastructure, with a focus on scalable and resilient platforms. Experienced in SQL/NoSQL optimization and performance tuning for mission-critical systems. Hands-on experience integrating AI-driven solutions using RAG and LLMs. Proven leadership in cross-functional teams with strong stakeholder communication and mentoring experience.
                 </p>
               </nz-card>
             </div>
 
-            <div nz-col [nzXs]="24" [nzLg]="6">
-              <nz-card nzTitle="Education" nzBorderless style="border-radius:12px;height:100%;">
+            <div nz-col [nzXs]="24" [nzLg]="12">
+              <nz-card nzTitle="Education" nzBorderless class="about-secondary-card">
                 @for (edu of education; track edu.id) {
-                  <div style="margin-bottom:16px;padding-bottom:16px;border-bottom:1px solid #f0f0f0;">
-                    <div style="font-weight:700;font-size:13px;color:#1a1a2e;margin-bottom:2px;">{{ edu.degree }}</div>
-                    <div style="font-size:12px;color:#1890ff;font-weight:600;margin-bottom:3px;">{{ edu.institution }}</div>
-                    <div style="font-size:12px;color:#8c8c8c;">{{ edu.field }} · {{ edu.startYear }} – {{ edu.endYear }}</div>
-                    <div style="font-size:11px;color:#8c8c8c;">{{ edu.location }}</div>
-                    @if (edu.gpa) { <nz-tag nzColor="green" style="margin-top:6px;font-size:11px;">{{ edu.gpa }}</nz-tag> }
+                  <div class="about-list-item">
+                    <div class="about-item-title">{{ edu.degree }}</div>
+                    <div class="about-item-link">{{ edu.institution }}</div>
+                    <div class="about-item-meta">{{ edu.field }} · {{ edu.startYear }} – {{ edu.endYear }}</div>
+                    <div class="about-item-submeta">{{ edu.location }}</div>
+                    @if (edu.gpa) { <nz-tag nzColor="green" class="about-item-tag">{{ edu.gpa }}</nz-tag> }
                   </div>
                 }
               </nz-card>
             </div>
 
-            <div nz-col [nzXs]="24" [nzLg]="6">
-              <nz-card nzTitle="Awards & Achievements" nzBorderless style="border-radius:12px;height:100%;">
+            <div nz-col [nzXs]="24" [nzLg]="12">
+              <nz-card nzTitle="Awards & Achievements" nzBorderless class="about-secondary-card">
                 @for (award of awards; track award.title) {
-                  <div style="display:flex;gap:10px;margin-bottom:12px;padding-bottom:12px;border-bottom:1px solid #f0f0f0;">
-                    <div style="width:30px;height:30px;border-radius:8px;background:#fff7e6;display:flex;align-items:center;justify-content:center;flex-shrink:0;">
-                      <span nz-icon [nzType]="award.icon" style="color:#fa8c16;font-size:13px;"></span>
+                  <div class="about-list-item about-award-item">
+                    <div class="about-award-icon">
+                      <span nz-icon [nzType]="award.icon"></span>
                     </div>
                     <div>
                       @if (award.url) {
-                        <a [href]="award.url" target="_blank" style="font-weight:600;font-size:12px;color:#1a1a2e;line-height:1.3;text-decoration:underline;">
+                        <a [href]="award.url" target="_blank" class="about-award-link">
                           {{ award.title }}
                         </a>
                       } @else {
-                        <div style="font-weight:600;font-size:12px;color:#1a1a2e;line-height:1.3;">{{ award.title }}</div>
+                        <div class="about-item-title">{{ award.title }}</div>
                       }
-                      <div style="font-size:11px;color:#8c8c8c;margin-top:2px;">{{ award.detail }}</div>
+                      <div class="about-item-submeta">{{ award.detail }}</div>
                     </div>
                   </div>
                 }
