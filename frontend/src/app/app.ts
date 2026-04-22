@@ -70,7 +70,7 @@ export class App implements OnInit {
 
   isDark  = signal(false);
   selectedTab = 0;
-  // Tabs: 0=Home, 1=Skills, 2=Projects, 3=Experience, 4=Research, 5=Resume, 6=Contact
+  // Tabs: 0=Home, 1=Skills, 2=Projects, 3=Experience, 4=Research, 5=Contact
 
   skillGroups: SkillGroup[] = [];
   allProjects: Project[]    = [];
@@ -109,23 +109,6 @@ export class App implements OnInit {
       url: 'https://ieeexplore.ieee.org/document/11437157',
       tags: ['Random Forest', 'LSTM', 'Machine Learning', 'Healthcare', 'AI'],
       description: 'Developed a hybrid Random Forest–LSTM pipeline combining environmental and clinical biomarkers to predict respiratory irritation and identify key combustion-related risk factors.',
-    },
-  ];
-
-  readonly certifications = [
-    {
-      title: 'Secure Coding & Application Security',
-      issuer: 'SecureFlag',
-      detail: 'Hands-on training on OWASP Top 10, secure coding practices, and real-world exploitation scenarios.',
-      url: '#',
-      icon: 'safety',
-    },
-    {
-      title: 'Data Structures',
-      issuer: 'UC San Diego — Coursera',
-      detail: 'Fundamental data structures, algorithm design, and performance optimisation techniques.',
-      url: '#',
-      icon: 'deployment-unit',
     },
   ];
 

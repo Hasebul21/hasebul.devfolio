@@ -3,7 +3,7 @@
   <!-- ══ HEADER ══ -->
   <nz-header class="portfolio-header">
     <div class="header-brand">
-      <div class="brand-avatar">HH</div>
+      <div class="brand-avatar"><span nz-icon nzType="user"></span></div>
       <span class="brand-name">Hasebul Hassan Chowdhury</span>
     </div>
     <div class="header-right">
@@ -37,7 +37,7 @@
 
             <!-- Avatar -->
             <div style="flex-shrink:0;display:flex;justify-content:center;width:100%;" class="hero-avatar-wrap">
-              <div class="hero-avatar">HH</div>
+              <div class="hero-avatar"><span nz-icon nzType="user"></span></div>
             </div>
 
             <!-- Text -->
@@ -46,8 +46,11 @@
               <h1 style="font-size:38px;font-weight:800;margin:0 0 6px;background:linear-gradient(135deg,#1890ff,#722ed1);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;">
                 Hasebul Hassan Chowdhury
               </h1>
-              <p style="font-size:17px;color:#8c8c8c;margin:0 0 16px;font-weight:400;">
-                Full-Stack Developer · Backend Engineer · Researcher
+              <p style="font-size:17px;color:#8c8c8c;margin:0 0 8px;font-weight:400;">
+                Full-Stack Developer · Backend Engineer · Researcher · Dhaka, Bangladesh
+              </p>
+              <p style="font-size:13px;color:#595959;margin:0 0 16px;font-weight:600;">
+                Recruiter-friendly profile: impact highlights, tech depth, and verified results.
               </p>
               <p style="font-size:14px;color:#595959;line-height:1.8;max-width:600px;margin:0 auto 24px;">
                 5+ years building scalable, high-performance systems with <strong>Java (Spring Boot)</strong> &amp;
@@ -56,7 +59,7 @@
                 Ranked in the <strong>top 7.6% globally on LeetCode</strong>.
               </p>
               <div style="display:flex;justify-content:center;gap:10px;flex-wrap:wrap;">
-                <button nz-button nzType="primary" nzSize="large" (click)="selectedTab = 6">
+                <button nz-button nzType="primary" nzSize="large" (click)="selectedTab = 5">
                   <span nz-icon nzType="mail"></span> Get In Touch
                 </button>
                 <a href="assets/resume/resume.pdf" download="Hasebul_Hassan_Resume.pdf" nz-button nzSize="large">
@@ -121,12 +124,9 @@
               <nz-card nzBorderless style="border-radius:12px;margin-bottom:16px;">
                 <div nz-row [nzGutter]="10">
                   @for (f of [
-                    {icon:'environment', label:'Cumilla, Bangladesh'},
-                    {icon:'phone',       label:'+880 1758144856'},
-                    {icon:'mail',        label:'hasebulhassan21@gmail.com'},
-                    {icon:'github',      label:'github.com/Hasebul21'},
-                    {icon:'trophy',      label:'LeetCode Top 7.6% (700+)'},
-                    {icon:'code',        label:'2100+ Problems Solved'}
+                    {icon:'environment', label:'Dhaka, Bangladesh'},
+                    {icon:'clock-circle',label:'5+ Years of Industry Experience'},
+                    {icon:'rocket',      label:'Production-Scale Backend & Cloud Systems'}
                   ]; track f.label) {
                     <div nz-col [nzXs]="24" [nzSm]="12" style="margin-bottom:8px;">
                       <div style="display:flex;align-items:center;gap:8px;padding:9px 12px;background:#f8f9fa;border-radius:8px;">
@@ -134,16 +134,6 @@
                         <span style="font-size:12px;font-weight:500;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;">{{ f.label }}</span>
                       </div>
                     </div>
-                  }
-                </div>
-              </nz-card>
-
-              <!-- Interests -->
-              <nz-card nzBorderless style="border-radius:12px;">
-                <div style="font-weight:600;font-size:13px;color:#595959;text-transform:uppercase;letter-spacing:.5px;margin-bottom:10px;">Interests</div>
-                <div style="display:flex;flex-wrap:wrap;gap:7px;">
-                  @for (i of ['Software Architecture','Distributed Systems','AI/ML Integration','Cloud Engineering','System Design','Competitive Programming','MLOps','Open Source']; track i) {
-                    <nz-tag>{{ i }}</nz-tag>
                   }
                 </div>
               </nz-card>
@@ -175,22 +165,6 @@
                     <div>
                       <div style="font-weight:600;font-size:12px;color:#1a1a2e;line-height:1.3;">{{ award.title }}</div>
                       <div style="font-size:11px;color:#8c8c8c;margin-top:2px;">{{ award.detail }}</div>
-                    </div>
-                  </div>
-                }
-              </nz-card>
-
-              <!-- Certifications -->
-              <nz-card nzTitle="Certifications" nzBorderless style="border-radius:12px;margin-bottom:16px;">
-                @for (cert of certifications; track cert.title) {
-                  <div style="display:flex;gap:10px;margin-bottom:12px;padding-bottom:12px;border-bottom:1px solid #f0f0f0;">
-                    <div style="width:30px;height:30px;border-radius:8px;background:#e6f7ff;display:flex;align-items:center;justify-content:center;flex-shrink:0;">
-                      <span nz-icon [nzType]="cert.icon" style="color:#1890ff;font-size:13px;"></span>
-                    </div>
-                    <div>
-                      <div style="font-weight:600;font-size:12px;color:#1a1a2e;line-height:1.3;">{{ cert.title }}</div>
-                      <div style="font-size:11px;color:#1890ff;font-weight:500;">{{ cert.issuer }}</div>
-                      <div style="font-size:11px;color:#8c8c8c;margin-top:2px;line-height:1.4;">{{ cert.detail }}</div>
                     </div>
                   </div>
                 }
@@ -426,39 +400,7 @@
       </nz-tab>
 
       <!-- ══════════════════════════════════════════
-           TAB 5 — RESUME
-      ══════════════════════════════════════════ -->
-      <nz-tab nzTitle="📄 Resume">
-        <div style="max-width:800px;margin:0 auto;padding:32px 16px;">
-          <div class="section-heading">
-            <h2>Resume</h2>
-            <p>View or download my latest resume</p>
-            <div class="heading-bar"></div>
-          </div>
-          <div style="display:flex;gap:12px;margin-bottom:24px;flex-wrap:wrap;">
-            <a href="assets/resume/resume.pdf" download="Hasebul_Hassan_Resume.pdf"
-               nz-button nzType="primary" nzSize="large">
-              <span nz-icon nzType="download"></span> Download PDF
-            </a>
-            <a href="assets/resume/resume.pdf" target="_blank" nz-button nzSize="large">
-              <span nz-icon nzType="eye"></span> Open in New Tab
-            </a>
-          </div>
-          <nz-card nzBorderless style="border-radius:12px;overflow:hidden;" [nzBodyStyle]="{'padding':'0'}">
-            <div style="background:#f5f5f5;padding:10px 16px;border-bottom:1px solid #f0f0f0;display:flex;align-items:center;gap:6px;">
-              <div style="width:10px;height:10px;border-radius:50%;background:#ff5f57;"></div>
-              <div style="width:10px;height:10px;border-radius:50%;background:#febc2e;"></div>
-              <div style="width:10px;height:10px;border-radius:50%;background:#28c840;"></div>
-              <span style="margin-left:8px;font-family:monospace;font-size:12px;color:#8c8c8c;">Hasebul_Hassan_Resume.pdf</span>
-            </div>
-            <iframe src="assets/resume/resume.pdf#toolbar=0" width="100%" height="700"
-                    style="border:none;display:block;" title="Hasebul Hassan Resume"></iframe>
-          </nz-card>
-        </div>
-      </nz-tab>
-
-      <!-- ══════════════════════════════════════════
-           TAB 6 — CONTACT
+           TAB 5 — CONTACT
       ══════════════════════════════════════════ -->
       <nz-tab nzTitle="✉️ Contact">
         <div style="max-width:900px;margin:0 auto;padding:32px 16px;">
