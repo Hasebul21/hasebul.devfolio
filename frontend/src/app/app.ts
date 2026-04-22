@@ -44,6 +44,7 @@ export interface Award {
   title: string;
   detail: string;
   icon: string;
+  url?: string;
 }
 
 @Component({
@@ -115,21 +116,25 @@ export class App implements OnInit {
       title: 'Solved 2100+ Programming Problems',
       detail: 'Across Codeforces, AtCoder, CodeChef, and LeetCode',
       icon: 'code',
+      url: 'https://www.stopstalk.com/user/profile/WA_TLE',
     },
     {
       title: 'LeetCode Top 7.6% Globally',
       detail: 'Solving over 700+ problems on LeetCode',
       icon: 'trophy',
+      url: 'https://leetcode.com/u/Hasebul/',
     },
     {
       title: '10th Place — Intra AIUB Programming Contest',
       detail: 'Fall 2021–22, out of 70+ contestants',
       icon: 'star',
+      url: 'https://oj.synapse0.com/standings.php?contest=1013',
     },
     {
       title: '6th Place — AIUB CS Fest 2018',
       detail: 'Programming Contest, out of 60+ contestants',
       icon: 'fire',
+      url: 'https://toph.co/c/aiub-cs-fest-2018-j/standings?fbclid=IwZXh0bgNhZW0CMTAAAR3un6HfOC8BeNZMMR2WJLkIbe8SCzjWHDPehn4qMLL1Qapd6vSqSZzcTpo_aem_AVQFgnEO-jO9ZM_k8ZP8LyMfDOFWRzFGrGtMqGEVzkKUIbQFSQ5FUvkVmzdlk3P4Yf2cnTp_ZuiRlCAK70Jb4DD_',
     },
   ];
 
