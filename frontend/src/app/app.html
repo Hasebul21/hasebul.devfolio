@@ -3,7 +3,7 @@
   <!-- ══ HEADER ══ -->
   <nz-header class="portfolio-header">
     <div class="header-brand">
-      <div class="brand-avatar"><span nz-icon nzType="user"></span></div>
+      <div class="brand-avatar">HH</div>
       <span class="brand-name">Hasebul Hassan Chowdhury</span>
     </div>
     <div class="header-right">
@@ -37,7 +37,7 @@
 
             <!-- Avatar -->
             <div style="flex-shrink:0;display:flex;justify-content:center;width:100%;" class="hero-avatar-wrap">
-              <div class="hero-avatar"><span nz-icon nzType="user"></span></div>
+              <div class="hero-avatar">HH</div>
             </div>
 
             <!-- Text -->
@@ -46,17 +46,14 @@
               <h1 style="font-size:38px;font-weight:800;margin:0 0 6px;background:linear-gradient(135deg,#1890ff,#722ed1);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;">
                 Hasebul Hassan Chowdhury
               </h1>
-              <p style="font-size:17px;color:#8c8c8c;margin:0 0 8px;font-weight:400;">
-                Full-Stack Developer · Backend Engineer · Researcher · Dhaka, Bangladesh
-              </p>
-              <p style="font-size:13px;color:#595959;margin:0 0 16px;font-weight:600;">
-                Recruiter-friendly profile: impact highlights, tech depth, and verified results.
-              </p>
-              <p style="font-size:14px;color:#595959;line-height:1.8;max-width:600px;margin:0 auto 24px;">
-                5+ years building scalable, high-performance systems with <strong>Java (Spring Boot)</strong> &amp;
-                <strong>NestJS</strong>, frontend expertise in <strong>Angular &amp; React</strong>,
-                and extensive <strong>AWS</strong> cloud experience.
-                Ranked in the <strong>top 7.6% globally on LeetCode</strong>.
+              <p style="font-size:14px;color:#595959;line-height:1.85;max-width:820px;margin:0 auto 24px;text-align:left;">
+                Engineering professional with 5+ years of experience designing, architecting, and scaling
+                high-performance systems across monolithic and distributed architectures for global enterprises,
+                including DN Media Group, Zaui Stay, and Stiftelsen Asta. Strong expertise in system design,
+                backend engineering, and AWS cloud infrastructure, with a focus on scalable and resilient platforms.
+                Experienced in SQL/NoSQL optimization and performance tuning for mission-critical systems.
+                Hands-on experience integrating AI-driven solutions using RAG and LLMs. Proven leadership in
+                cross-functional teams with strong stakeholder communication and mentoring experience.
               </p>
               <div style="display:flex;justify-content:center;gap:10px;flex-wrap:wrap;">
                 <button nz-button nzType="primary" nzSize="large" (click)="selectedTab = 5">
@@ -71,19 +68,6 @@
               </div>
             </div>
           </div>
-
-          <nz-card nzBorderless style="border-radius:12px;margin-bottom:24px;">
-            <div style="font-weight:700;font-size:13px;color:#595959;text-transform:uppercase;letter-spacing:.5px;margin-bottom:10px;">
-              Quick Navigation
-            </div>
-            <div style="display:flex;flex-wrap:wrap;gap:8px;">
-              <button nz-button nzSize="small" (click)="selectedTab = 1">Skills</button>
-              <button nz-button nzSize="small" (click)="selectedTab = 2">Projects</button>
-              <button nz-button nzSize="small" (click)="selectedTab = 3">Experience</button>
-              <button nz-button nzSize="small" (click)="selectedTab = 4">Research</button>
-              <button nz-button nzType="primary" nzSize="small" (click)="selectedTab = 5">Contact</button>
-            </div>
-          </nz-card>
 
           <!-- ── STATS ROW ── -->
           <div nz-row [nzGutter]="16" style="margin-bottom:40px;">
@@ -152,7 +136,7 @@
               </nz-card>
             </div>
 
-            <!-- Right column: Education + Awards + Certs + Core Stack -->
+            <!-- Right column: Education + Awards -->
             <div nz-col [nzXs]="24" [nzLg]="10">
 
               <!-- Education -->
@@ -181,16 +165,6 @@
                     </div>
                   </div>
                 }
-              </nz-card>
-
-              <!-- Core stack -->
-              <nz-card nzBorderless style="border-radius:12px;">
-                <div style="font-weight:600;font-size:13px;color:#595959;text-transform:uppercase;letter-spacing:.5px;margin-bottom:10px;">Core Stack</div>
-                <div style="display:flex;flex-wrap:wrap;gap:7px;">
-                  @for (t of ['Java','Spring Boot','NestJS','TypeScript','Angular','React','PostgreSQL','Redis','Docker','AWS','Elasticsearch','GitHub Actions']; track t) {
-                    <nz-tag nzColor="blue">{{ t }}</nz-tag>
-                  }
-                </div>
               </nz-card>
 
             </div>
