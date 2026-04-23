@@ -15,8 +15,8 @@ const STATIC_PROJECTS: Project[] = [
   {
     id: 1,
     title: 'Trading Portfolio Platform',
-    description: 'Built and deployed a full-stack stock portfolio platform for transaction logging, live holdings, watchlist classification, and realized/unrealized P/L analytics with near real-time market data integration.',
-    techStack: ['Next.js', 'TypeScript', 'Supabase', 'PostgreSQL', 'Market Data APIs'],
+    description: 'Problem: Traders lacked a unified tool to track DSE holdings, P&L, and market data in one place. Solution: Built a full-stack platform (Next.js, TypeScript, Supabase, PostgreSQL) with transaction logging, live DSE market-data integration, watchlist classification, and automated email reports. Impact: Delivered near real-time realized/unrealized P&L analytics and portfolio snapshots, eliminating manual spreadsheet tracking.',
+    techStack: ['Next.js', 'TypeScript', 'Supabase', 'PostgreSQL', 'DSE Market API', 'Cursor AI'],
     githubUrl: 'https://github.com/Hasebul21/trading-portfolio',
     featured: true,
     category: 'Full Stack',
@@ -24,7 +24,7 @@ const STATIC_PROJECTS: Project[] = [
   {
     id: 2,
     title: 'QuickChat — Real-Time Chat Application',
-    description: 'Developed a real-time chat application using WebSockets for bidirectional communication, user authentication, Redis caching, and Elasticsearch-powered message indexing and retrieval.',
+    description: 'Problem: Traditional polling-based chat systems suffer high latency and poor scalability under concurrent load. Solution: Built a WebSocket-based bidirectional chat system with JWT authentication, Redis pub/sub caching for low-latency message delivery, and Elasticsearch for full-text message indexing. Impact: Achieved sub-100ms message delivery with efficient search across chat history using a Dockerised, horizontally-scalable architecture.',
     techStack: ['Java', 'Spring Boot', 'Angular', 'PostgreSQL', 'Redis', 'Elasticsearch', 'Docker'],
     githubUrl: 'https://github.com/Hasebul21/quick-chat',
     featured: true,

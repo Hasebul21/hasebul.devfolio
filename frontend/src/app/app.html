@@ -29,7 +29,46 @@
            TAB 0 — HOME & ABOUT (MERGED)
       ══════════════════════════════════════════ -->
       <nz-tab nzTitle="🏠 Home">
-        <div style="max-width:1000px;margin:0 auto;padding:18px 16px 32px;">
+        <!-- ══ HERO ══ -->
+        <div class="hero-section">
+          <div class="hero-avatar">HH</div>
+          <h1>Hasebul Hassan Chowdhury</h1>
+          <p class="hero-title">Senior Software Engineer &nbsp;·&nbsp; IEEE Researcher &nbsp;·&nbsp; Competitive Programmer</p>
+          <p class="hero-desc">
+            Building scalable, high-performance distributed systems for global enterprises.
+            5+ years at Cefalo Bangladesh — DN Media Group, Zaui Stay, Stiftelsen Asta.
+            2× IEEE-published author. Top 7.6% globally on LeetCode.
+          </p>
+          <div class="hero-cta">
+            <a href="assets/resume/Hasebul_Hassan_CHowdhury_Web.pdf" download="Hasebul_Hassan_Industry_Resume.pdf"
+               nz-button nzType="primary" nzSize="large" class="hero-btn-primary">
+              <span nz-icon nzType="download"></span> Industry Resume
+            </a>
+            <a href="assets/resume/Hasebul_Hassan_CHowdhury_Academic.pdf" download="Hasebul_Hassan_Academic_CV.pdf"
+               nz-button nzType="default" nzSize="large" class="hero-btn-secondary">
+              <span nz-icon nzType="file-text"></span> Academic CV
+            </a>
+          </div>
+          <div class="hero-social">
+            <a href="https://github.com/Hasebul21" target="_blank" nz-tooltip nzTooltipTitle="GitHub" class="hero-social-link">
+              <span nz-icon nzType="github"></span>
+            </a>
+            <a href="https://linkedin.com/in/hasebul" target="_blank" nz-tooltip nzTooltipTitle="LinkedIn" class="hero-social-link">
+              <span nz-icon nzType="linkedin"></span>
+            </a>
+            <a href="mailto:hasebulhassan21@gmail.com" nz-tooltip nzTooltipTitle="hasebulhassan21@gmail.com" class="hero-social-link">
+              <span nz-icon nzType="mail"></span>
+            </a>
+            <a href="https://www.researchgate.net/profile/Hasebul-Hassan-Chowdhury/research" target="_blank" nz-tooltip nzTooltipTitle="ResearchGate" class="hero-social-link">
+              <span nz-icon nzType="read"></span>
+            </a>
+            <a href="https://leetcode.com/u/Hasebul/" target="_blank" nz-tooltip nzTooltipTitle="LeetCode — Top 7.6%" class="hero-social-link">
+              <span nz-icon nzType="trophy"></span>
+            </a>
+          </div>
+        </div>
+
+        <div style="max-width:1000px;margin:0 auto;padding:0 16px 32px;">
 
           <!-- ── STATS ROW ── -->
           <div nz-row [nzGutter]="16" style="margin-bottom:40px;">
@@ -98,6 +137,32 @@
                   </div>
                 }
               </nz-card>
+            </div>
+
+            <!-- ── CERTIFICATIONS ── -->
+            <div nz-col [nzXs]="24">
+              <div class="section-heading" style="margin-bottom:20px;">
+                <h2>Certifications</h2>
+                <div class="heading-bar" style="margin:10px 0 0;"></div>
+              </div>
+              <div nz-row [nzGutter]="[16,16]">
+                @for (cert of certifications; track cert.title) {
+                  <div nz-col [nzXs]="24" [nzSm]="12">
+                    <nz-card nzBorderless class="cert-card">
+                      <div class="cert-card-inner">
+                        <div class="cert-icon-wrap" [style.background]="cert.color + '1a'">
+                          <span nz-icon [nzType]="cert.icon" [style.color]="cert.color" style="font-size:20px;"></span>
+                        </div>
+                        <div>
+                          <div class="cert-title">{{ cert.title }}</div>
+                          <div class="cert-issuer">{{ cert.issuer }}</div>
+                          <p class="cert-detail">{{ cert.detail }}</p>
+                        </div>
+                      </div>
+                    </nz-card>
+                  </div>
+                }
+              </div>
             </div>
           </div>
 
@@ -423,8 +488,10 @@
     </nz-tabs>
   </nz-content>
 
-  <nz-footer style="text-align:center;background:#fff;border-top:1px solid #f0f0f0;color:#8c8c8c;font-size:13px;padding:16px;">
-    © 2025 Hasebul Hassan · Dhaka, Bangladesh
+  <nz-footer class="portfolio-footer">
+    © 2026 Hasebul Hassan Chowdhury &nbsp;·&nbsp; Dhaka, Bangladesh
+    &nbsp;·&nbsp;
+    <a href="mailto:hasebulhassan21@gmail.com" style="color:#8c8c8c;">hasebulhassan21@gmail.com</a>
   </nz-footer>
 
 </nz-layout>

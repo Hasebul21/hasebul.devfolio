@@ -111,6 +111,23 @@ export class App implements OnInit {
     },
   ];
 
+  readonly certifications = [
+    {
+      title: 'Secure Coding & Application Security',
+      issuer: 'SecureFlag',
+      detail: 'Hands-on training on secure coding practices, OWASP Top 10 vulnerabilities, and real-world exploitation scenarios.',
+      icon: 'safety',
+      color: '#52c41a',
+    },
+    {
+      title: 'Data Structures',
+      issuer: 'University of California San Diego (Coursera)',
+      detail: 'Fundamental data structures, algorithm design, and performance optimisation techniques.',
+      icon: 'experiment',
+      color: '#1890ff',
+    },
+  ];
+
   readonly awards: Award[] = [
     {
       title: 'Solved 2100+ Programming Problems',
@@ -120,7 +137,7 @@ export class App implements OnInit {
     },
     {
       title: 'LeetCode Top 7.6% Globally',
-      detail: 'Solving over 700+ problems on LeetCode',
+      detail: 'Solved 800+ problems on LeetCode',
       icon: 'trophy',
       url: 'https://leetcode.com/u/Hasebul/',
     },
