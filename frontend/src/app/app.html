@@ -9,14 +9,15 @@
       <a href="https://github.com/Hasebul21" target="_blank" nz-button nzType="text" nz-tooltip nzTooltipTitle="GitHub">
         <span nz-icon nzType="github"></span>
       </a>
-      <a href="https://linkedin.com/in/hasebul" target="_blank" nz-button nzType="text" nz-tooltip nzTooltipTitle="LinkedIn">
+      <a href="https://linkedin.com/in/hasebul" target="_blank" nz-button nzType="text" nz-tooltip
+        nzTooltipTitle="LinkedIn">
         <span nz-icon nzType="linkedin"></span>
       </a>
-      <a href="mailto:hasebulhassan21@gmail.com" nz-button nzType="text" nz-tooltip nzTooltipTitle="hasebulhassan21@gmail.com">
+      <a href="mailto:hasebulhassan21@gmail.com" nz-button nzType="text" nz-tooltip
+        nzTooltipTitle="hasebulhassan21@gmail.com">
         <span nz-icon nzType="mail"></span>
       </a>
-      <nz-switch [(ngModel)]="isDark" (ngModelChange)="toggleTheme()"
-        nzCheckedChildren="🌙" nzUnCheckedChildren="☀️">
+      <nz-switch [(ngModel)]="isDark" (ngModelChange)="toggleTheme()" nzCheckedChildren="🌙" nzUnCheckedChildren="☀️">
       </nz-switch>
     </div>
   </nz-header>
@@ -33,7 +34,8 @@
         <div class="hero-section">
           <div class="hero-avatar">HH</div>
           <h1>Hasebul Hassan Chowdhury</h1>
-          <p class="hero-title">Senior Software Engineer &nbsp;·&nbsp; IEEE Researcher &nbsp;·&nbsp; Competitive Programmer</p>
+          <p class="hero-title">Senior Software Engineer &nbsp;·&nbsp; IEEE Researcher &nbsp;·&nbsp; Competitive
+            Programmer</p>
           <p class="hero-desc">
             Building scalable, high-performance distributed systems for global enterprises.
             5+ years at Cefalo Bangladesh — DN Media Group, Zaui Stay, Stiftelsen Asta.
@@ -41,28 +43,33 @@
           </p>
           <div class="hero-cta">
             <a href="assets/resume/Hasebul_Hassan_CHowdhury_Web.pdf" download="Hasebul_Hassan_Industry_Resume.pdf"
-               nz-button nzType="primary" nzSize="large" class="hero-btn-primary">
+              nz-button nzType="primary" nzSize="large" class="hero-btn-primary">
               <span nz-icon nzType="download"></span> Industry Resume
             </a>
             <a href="assets/resume/Hasebul_Hassan_CHowdhury_Academic.pdf" download="Hasebul_Hassan_Academic_CV.pdf"
-               nz-button nzType="default" nzSize="large" class="hero-btn-secondary">
+              nz-button nzType="default" nzSize="large" class="hero-btn-secondary">
               <span nz-icon nzType="file-text"></span> Academic CV
             </a>
           </div>
           <div class="hero-social">
-            <a href="https://github.com/Hasebul21" target="_blank" nz-tooltip nzTooltipTitle="GitHub" class="hero-social-link">
+            <a href="https://github.com/Hasebul21" target="_blank" nz-tooltip nzTooltipTitle="GitHub"
+              class="hero-social-link">
               <span nz-icon nzType="github"></span>
             </a>
-            <a href="https://linkedin.com/in/hasebul" target="_blank" nz-tooltip nzTooltipTitle="LinkedIn" class="hero-social-link">
+            <a href="https://linkedin.com/in/hasebul" target="_blank" nz-tooltip nzTooltipTitle="LinkedIn"
+              class="hero-social-link">
               <span nz-icon nzType="linkedin"></span>
             </a>
-            <a href="mailto:hasebulhassan21@gmail.com" nz-tooltip nzTooltipTitle="hasebulhassan21@gmail.com" class="hero-social-link">
+            <a href="mailto:hasebulhassan21@gmail.com" nz-tooltip nzTooltipTitle="hasebulhassan21@gmail.com"
+              class="hero-social-link">
               <span nz-icon nzType="mail"></span>
             </a>
-            <a href="https://www.researchgate.net/profile/Hasebul-Hassan-Chowdhury/research" target="_blank" nz-tooltip nzTooltipTitle="ResearchGate" class="hero-social-link">
+            <a href="https://www.researchgate.net/profile/Hasebul-Hassan-Chowdhury/research" target="_blank" nz-tooltip
+              nzTooltipTitle="ResearchGate" class="hero-social-link">
               <span nz-icon nzType="read"></span>
             </a>
-            <a href="https://leetcode.com/u/Hasebul/" target="_blank" nz-tooltip nzTooltipTitle="LeetCode — Top 7.6%" class="hero-social-link">
+            <a href="https://leetcode.com/u/Hasebul/" target="_blank" nz-tooltip nzTooltipTitle="LeetCode — Top 7.6%"
+              class="hero-social-link">
               <span nz-icon nzType="trophy"></span>
             </a>
           </div>
@@ -73,17 +80,17 @@
           <!-- ── STATS ROW ── -->
           <div nz-row [nzGutter]="16" style="margin-bottom:40px;">
             @for (s of [
-              {value:'5+',      label:'Years Experience',     color:'#1890ff'},
-              {value:'2100+',   label:'Problems Solved',      color:'#722ed1'},
-              {value:'Top 7.6%',label:'LeetCode Global Rank', color:'#52c41a'},
-              {value:'2',       label:'IEEE Publications',    color:'#fa8c16'}
+            {value:'5+', label:'Years Experience', color:'#1890ff'},
+            {value:'2100+', label:'Problems Solved', color:'#722ed1'},
+            {value:'Top 7.6%',label:'LeetCode Global Rank', color:'#52c41a'},
+            {value:'2', label:'IEEE Publications', color:'#fa8c16'}
             ]; track s.label) {
-              <div nz-col [nzXs]="12" [nzSm]="6">
-                <nz-card nzBorderless style="text-align:center;border-radius:12px;margin-bottom:8px;">
-                  <div [style.color]="s.color" style="font-size:26px;font-weight:800;line-height:1.1;">{{ s.value }}</div>
-                  <div style="font-size:12px;color:#8c8c8c;margin-top:4px;">{{ s.label }}</div>
-                </nz-card>
-              </div>
+            <div nz-col [nzXs]="12" [nzSm]="6">
+              <nz-card nzBorderless style="text-align:center;border-radius:12px;margin-bottom:8px;">
+                <div [style.color]="s.color" style="font-size:26px;font-weight:800;line-height:1.1;">{{ s.value }}</div>
+                <div style="font-size:12px;color:#8c8c8c;margin-top:4px;">{{ s.label }}</div>
+              </nz-card>
+            </div>
             }
           </div>
 
@@ -98,7 +105,13 @@
               </div>
               <nz-card nzBorderless class="about-primary-card">
                 <p class="about-summary-text">
-                  Engineering professional with 5+ years of experience designing, architecting, and scaling high-performance systems across monolithic and distributed architectures for global enterprises, including DN Media Group, Zaui Stay, and Stiftelsen Asta. Strong expertise in system design, backend engineering, and AWS cloud infrastructure, with a focus on scalable and resilient platforms. Experienced in SQL/NoSQL optimization and performance tuning for mission-critical systems. Hands-on experience integrating AI-driven solutions using RAG and LLMs. Proven leadership in cross-functional teams with strong stakeholder communication and mentoring experience.
+                  Engineering professional with 5+ years of experience designing, architecting, and scaling
+                  high-performance systems across monolithic and distributed architectures for global enterprises,
+                  including DN Media Group, Zaui Stay, and Stiftelsen Asta. Strong expertise in system design, backend
+                  engineering, and AWS cloud infrastructure, with a focus on scalable and resilient platforms.
+                  Experienced in SQL/NoSQL optimization and performance tuning for mission-critical systems. Hands-on
+                  experience integrating AI-driven solutions using RAG and LLMs. Proven leadership in cross-functional
+                  teams with strong stakeholder communication and mentoring experience.
                 </p>
               </nz-card>
             </div>
@@ -106,13 +119,13 @@
             <div nz-col [nzXs]="24" [nzLg]="12">
               <nz-card nzTitle="Education" nzBorderless class="about-secondary-card">
                 @for (edu of education; track edu.id) {
-                  <div class="about-list-item">
-                    <div class="about-item-title">{{ edu.degree }}</div>
-                    <div class="about-item-link">{{ edu.institution }}</div>
-                    <div class="about-item-meta">{{ edu.field }} · {{ edu.startYear }} – {{ edu.endYear }}</div>
-                    <div class="about-item-submeta">{{ edu.location }}</div>
-                    @if (edu.gpa) { <nz-tag nzColor="green" class="about-item-tag">{{ edu.gpa }}</nz-tag> }
-                  </div>
+                <div class="about-list-item">
+                  <div class="about-item-title">{{ edu.degree }}</div>
+                  <div class="about-item-link">{{ edu.institution }}</div>
+                  <div class="about-item-meta">{{ edu.field }} · {{ edu.startYear }} – {{ edu.endYear }}</div>
+                  <div class="about-item-submeta">{{ edu.location }}</div>
+                  @if (edu.gpa) { <nz-tag nzColor="green" class="about-item-tag">{{ edu.gpa }}</nz-tag> }
+                </div>
                 }
               </nz-card>
             </div>
@@ -120,21 +133,21 @@
             <div nz-col [nzXs]="24" [nzLg]="12">
               <nz-card nzTitle="Awards & Achievements" nzBorderless class="about-secondary-card">
                 @for (award of awards; track award.title) {
-                  <div class="about-list-item about-award-item">
-                    <div class="about-award-icon">
-                      <span nz-icon [nzType]="award.icon"></span>
-                    </div>
-                    <div>
-                      @if (award.url) {
-                        <a [href]="award.url" target="_blank" class="about-award-link">
-                          {{ award.title }}
-                        </a>
-                      } @else {
-                        <div class="about-item-title">{{ award.title }}</div>
-                      }
-                      <div class="about-item-submeta">{{ award.detail }}</div>
-                    </div>
+                <div class="about-list-item about-award-item">
+                  <div class="about-award-icon">
+                    <span nz-icon [nzType]="award.icon"></span>
                   </div>
+                  <div>
+                    @if (award.url) {
+                    <a [href]="award.url" target="_blank" class="about-award-link">
+                      {{ award.title }}
+                    </a>
+                    } @else {
+                    <div class="about-item-title">{{ award.title }}</div>
+                    }
+                    <div class="about-item-submeta">{{ award.detail }}</div>
+                  </div>
+                </div>
                 }
               </nz-card>
             </div>
@@ -147,20 +160,20 @@
               </div>
               <div nz-row [nzGutter]="[16,16]">
                 @for (cert of certifications; track cert.title) {
-                  <div nz-col [nzXs]="24" [nzSm]="12">
-                    <nz-card nzBorderless class="cert-card">
-                      <div class="cert-card-inner">
-                        <div class="cert-icon-wrap" [style.background]="cert.color + '1a'">
-                          <span nz-icon [nzType]="cert.icon" [style.color]="cert.color" style="font-size:20px;"></span>
-                        </div>
-                        <div>
-                          <div class="cert-title">{{ cert.title }}</div>
-                          <div class="cert-issuer">{{ cert.issuer }}</div>
-                          <p class="cert-detail">{{ cert.detail }}</p>
-                        </div>
+                <div nz-col [nzXs]="24" [nzSm]="12">
+                  <nz-card nzBorderless class="cert-card">
+                    <div class="cert-card-inner">
+                      <div class="cert-icon-wrap" [style.background]="cert.color + '1a'">
+                        <span nz-icon [nzType]="cert.icon" [style.color]="cert.color" style="font-size:20px;"></span>
                       </div>
-                    </nz-card>
-                  </div>
+                      <div>
+                        <div class="cert-title">{{ cert.title }}</div>
+                        <div class="cert-issuer">{{ cert.issuer }}</div>
+                        <p class="cert-detail">{{ cert.detail }}</p>
+                      </div>
+                    </div>
+                  </nz-card>
+                </div>
                 }
               </div>
             </div>
@@ -181,26 +194,28 @@
           </div>
           <div nz-row [nzGutter]="16">
             @for (group of skillGroups; track group.category) {
-              <div nz-col [nzXs]="24" [nzSm]="12" [nzXl]="8">
-                <nz-card nzBorderless style="border-radius:12px;margin-bottom:16px;">
-                  <div style="display:flex;align-items:center;gap:10px;margin-bottom:16px;">
-                    <div [style.background]="getCategoryColor(group.category)" style="width:4px;height:28px;border-radius:2px;"></div>
-                    <div>
-                      <div style="font-weight:700;font-size:15px;">{{ group.label }}</div>
-                      <div style="font-size:12px;color:#8c8c8c;">{{ group.skills.length }} skills</div>
-                    </div>
+            <div nz-col [nzXs]="24" [nzSm]="12" [nzXl]="8">
+              <nz-card nzBorderless style="border-radius:12px;margin-bottom:16px;">
+                <div style="display:flex;align-items:center;gap:10px;margin-bottom:16px;">
+                  <div [style.background]="getCategoryColor(group.category)"
+                    style="width:4px;height:28px;border-radius:2px;"></div>
+                  <div>
+                    <div style="font-weight:700;font-size:15px;">{{ group.label }}</div>
+                    <div style="font-size:12px;color:#8c8c8c;">{{ group.skills.length }} skills</div>
                   </div>
-                  @for (skill of group.skills; track skill.id) {
-                    <div style="margin-bottom:14px;">
-                      <div style="display:flex;justify-content:space-between;margin-bottom:5px;font-size:13px;">
-                        <span style="font-weight:500;">{{ skill.name }}</span>
-                        <span style="color:#8c8c8c;">{{ skill.yearsOfExperience }}y · {{ skill.proficiency }}%</span>
-                      </div>
-                      <nz-progress [nzPercent]="skill.proficiency" [nzStrokeColor]="getCategoryColor(group.category)" nzSize="small" [nzShowInfo]="false"></nz-progress>
-                    </div>
-                  }
-                </nz-card>
-              </div>
+                </div>
+                @for (skill of group.skills; track skill.id) {
+                <div style="margin-bottom:14px;">
+                  <div style="display:flex;justify-content:space-between;margin-bottom:5px;font-size:13px;">
+                    <span style="font-weight:500;">{{ skill.name }}</span>
+                    <span style="color:#8c8c8c;">{{ skill.yearsOfExperience }}y · {{ skill.proficiency }}%</span>
+                  </div>
+                  <nz-progress [nzPercent]="skill.proficiency" [nzStrokeColor]="getCategoryColor(group.category)"
+                    nzSize="small" [nzShowInfo]="false"></nz-progress>
+                </div>
+                }
+              </nz-card>
+            </div>
             }
           </div>
         </div>
@@ -219,46 +234,48 @@
 
           <div style="display:flex;flex-wrap:wrap;gap:8px;margin-bottom:24px;">
             @for (tag of allTags; track tag) {
-              <nz-tag [nzColor]="activeFilter === tag ? 'blue' : 'default'"
-                      (click)="setFilter(tag)"
-                      style="cursor:pointer;padding:4px 12px;font-size:13px;">{{ tag }}</nz-tag>
+            <nz-tag [nzColor]="activeFilter === tag ? 'blue' : 'default'" (click)="setFilter(tag)"
+              style="cursor:pointer;padding:4px 12px;font-size:13px;">{{ tag }}</nz-tag>
             }
           </div>
 
           <div nz-row [nzGutter]="[16,16]">
             @for (project of filteredProjects; track project.id) {
-              <div nz-col [nzXs]="24" [nzSm]="12" [nzLg]="8">
-                <nz-card nzBorderless class="project-card" [nzBodyStyle]="{'display':'flex','flex-direction':'column','height':'100%'}">
-                  <div style="display:flex;justify-content:space-between;align-items:start;margin-bottom:6px;">
-                    <span class="project-category-badge">{{ project.category }}</span>
-                    <div style="display:flex;gap:4px;">
-                      @if (project.featured) { <nz-tag nzColor="gold" style="font-size:11px;">Featured</nz-tag> }
-                      @if (project.category === 'Research') { <nz-tag nzColor="blue" style="font-size:11px;">IEEE</nz-tag> }
-                    </div>
-                  </div>
-                  <p class="project-title">{{ project.title }}</p>
-                  <p class="project-desc" style="flex:1;">{{ project.description }}</p>
-                  <div style="display:flex;flex-wrap:wrap;gap:4px;margin-bottom:12px;">
-                    @for (tech of project.techStack.slice(0,4); track tech) {
-                      <nz-tag style="font-size:11px;">{{ tech }}</nz-tag>
-                    }
-                    @if (project.techStack.length > 4) { <nz-tag style="font-size:11px;">+{{ project.techStack.length - 4 }}</nz-tag> }
-                  </div>
-                  <div style="display:flex;gap:8px;">
-                    @if (project.githubUrl) {
-                      <a [href]="project.githubUrl" target="_blank" nz-button nzType="default" nzSize="small">
-                        <span nz-icon nzType="github"></span> Code
-                      </a>
-                    }
-                    @if (project.liveUrl) {
-                      <a [href]="project.liveUrl" target="_blank" nz-button nzType="primary" nzSize="small">
-                        <span nz-icon nzType="link"></span>
-                        {{ project.category === 'Research' ? 'Paper' : 'Demo' }}
-                      </a>
+            <div nz-col [nzXs]="24" [nzSm]="12" [nzLg]="8">
+              <nz-card nzBorderless class="project-card"
+                [nzBodyStyle]="{'display':'flex','flex-direction':'column','height':'100%'}">
+                <div style="display:flex;justify-content:space-between;align-items:start;margin-bottom:6px;">
+                  <span class="project-category-badge">{{ project.category }}</span>
+                  <div style="display:flex;gap:4px;">
+                    @if (project.featured) { <nz-tag nzColor="gold" style="font-size:11px;">Featured</nz-tag> }
+                    @if (project.category === 'Research') { <nz-tag nzColor="blue" style="font-size:11px;">IEEE</nz-tag>
                     }
                   </div>
-                </nz-card>
-              </div>
+                </div>
+                <p class="project-title">{{ project.title }}</p>
+                <p class="project-desc" style="flex:1;">{{ project.description }}</p>
+                <div style="display:flex;flex-wrap:wrap;gap:4px;margin-bottom:12px;">
+                  @for (tech of project.techStack.slice(0,4); track tech) {
+                  <nz-tag style="font-size:11px;">{{ tech }}</nz-tag>
+                  }
+                  @if (project.techStack.length > 4) { <nz-tag style="font-size:11px;">+{{ project.techStack.length - 4
+                    }}</nz-tag> }
+                </div>
+                <div style="display:flex;gap:8px;">
+                  @if (project.githubUrl) {
+                  <a [href]="project.githubUrl" target="_blank" nz-button nzType="default" nzSize="small">
+                    <span nz-icon nzType="github"></span> Code
+                  </a>
+                  }
+                  @if (project.liveUrl) {
+                  <a [href]="project.liveUrl" target="_blank" nz-button nzType="primary" nzSize="small">
+                    <span nz-icon nzType="link"></span>
+                    {{ project.category === 'Research' ? 'Paper' : 'Demo' }}
+                  </a>
+                  }
+                </div>
+              </nz-card>
+            </div>
             }
           </div>
 
@@ -283,41 +300,44 @@
 
           <div nz-row [nzGutter]="[16,16]">
             @for (exp of experiences; track exp.id) {
-              <div nz-col [nzXs]="24" [nzLg]="12">
-                <nz-card nzBorderless class="exp-card" style="height:100%;">
-                  <div style="display:flex;flex-wrap:wrap;justify-content:space-between;gap:8px;margin-bottom:4px;">
-                    <div>
-                      <p class="exp-role">{{ exp.role }}</p>
-                      <p class="exp-company">
-                        @if (exp.companyUrl) {
-                          <a [href]="exp.companyUrl" target="_blank" style="color:#1890ff;font-weight:600;">{{ exp.company }}</a>
-                        } @else { {{ exp.company }} }
-                      </p>
-                    </div>
-                    <div style="text-align:right;">
-                      <nz-tag [nzColor]="getTypeBadgeColor(exp.type)" style="text-transform:capitalize;">{{ exp.type }}</nz-tag>
-                      @if (exp.current) { <br><nz-badge nzStatus="processing" nzText="Current" style="margin-top:4px;"></nz-badge> }
-                    </div>
+            <div nz-col [nzXs]="24" [nzLg]="12">
+              <nz-card nzBorderless class="exp-card" style="height:100%;">
+                <div style="display:flex;flex-wrap:wrap;justify-content:space-between;gap:8px;margin-bottom:4px;">
+                  <div>
+                    <p class="exp-role">{{ exp.role }}</p>
+                    <p class="exp-company">
+                      @if (exp.companyUrl) {
+                      <a [href]="exp.companyUrl" target="_blank" style="color:#1890ff;font-weight:600;">{{ exp.company
+                        }}</a>
+                      } @else { {{ exp.company }} }
+                    </p>
                   </div>
-                  <p class="exp-meta">
-                    <span nz-icon nzType="calendar"></span>
-                    {{ exp.startDate }} – {{ exp.current ? 'Present' : exp.endDate }}
-                    &nbsp;·&nbsp;
-                    <span nz-icon nzType="environment"></span>
-                    {{ exp.location }}
-                  </p>
-                  <p class="exp-desc">{{ exp.description }}</p>
-                  <ul class="highlights">
-                    @for (h of exp.highlights; track h) { <li>{{ h }}</li> }
-                  </ul>
-                  <nz-divider style="margin:12px 0;"></nz-divider>
-                  <div style="display:flex;flex-wrap:wrap;gap:4px;">
-                    @for (tech of exp.techStack; track tech) {
-                      <nz-tag nzColor="blue" style="font-size:11px;">{{ tech }}</nz-tag>
-                    }
+                  <div style="text-align:right;">
+                    <nz-tag [nzColor]="getTypeBadgeColor(exp.type)" style="text-transform:capitalize;">{{ exp.type
+                      }}</nz-tag>
+                    @if (exp.current) { <br><nz-badge nzStatus="processing" nzText="Current"
+                      style="margin-top:4px;"></nz-badge> }
                   </div>
-                </nz-card>
-              </div>
+                </div>
+                <p class="exp-meta">
+                  <span nz-icon nzType="calendar"></span>
+                  {{ exp.startDate }} – {{ exp.current ? 'Present' : exp.endDate }}
+                  &nbsp;·&nbsp;
+                  <span nz-icon nzType="environment"></span>
+                  {{ exp.location }}
+                </p>
+                <p class="exp-desc">{{ exp.description }}</p>
+                <ul class="highlights">
+                  @for (h of exp.highlights; track h) { <li>{{ h }}</li> }
+                </ul>
+                <nz-divider style="margin:12px 0;"></nz-divider>
+                <div style="display:flex;flex-wrap:wrap;gap:4px;">
+                  @for (tech of exp.techStack; track tech) {
+                  <nz-tag nzColor="blue" style="font-size:11px;">{{ tech }}</nz-tag>
+                  }
+                </div>
+              </nz-card>
+            </div>
             }
           </div>
         </div>
@@ -331,7 +351,8 @@
           <div class="section-heading">
             <div style="display:flex;align-items:center;justify-content:space-between;gap:10px;flex-wrap:wrap;">
               <h2 style="margin:0;">Research & Publications</h2>
-              <a href="https://www.researchgate.net/profile/Hasebul-Hassan-Chowdhury/research" target="_blank" nz-button nzType="default" nzSize="small">
+              <a href="https://www.researchgate.net/profile/Hasebul-Hassan-Chowdhury/research" target="_blank" nz-button
+                nzType="default" nzSize="small">
                 <span nz-icon nzType="link"></span> ResearchGate
               </a>
             </div>
@@ -343,35 +364,38 @@
             <div nz-col [nzXs]="24" [nzLg]="14">
               <div nz-row [nzGutter]="[12,12]">
                 @for (pub of publications; track pub.title; let i = $index) {
-                  <div nz-col [nzXs]="24" [nzMd]="12">
-                    <nz-card nzBorderless style="border-left:4px solid #1890ff;border-radius:0 12px 12px 0;height:100%;">
-                      <div style="display:flex;justify-content:space-between;align-items:start;flex-wrap:wrap;gap:8px;margin-bottom:10px;">
-                        <div style="display:flex;gap:8px;flex-wrap:wrap;">
-                          <nz-tag nzColor="blue">{{ pub.venue }}</nz-tag>
-                          <nz-tag nzColor="green">{{ pub.status }}</nz-tag>
-                          <nz-tag>{{ pub.year }}</nz-tag>
-                        </div>
-                        <span style="font-size:18px;font-weight:800;color:#e8e8e8;">#{{ i + 1 }}</span>
+                <div nz-col [nzXs]="24" [nzMd]="12">
+                  <nz-card nzBorderless style="border-left:4px solid #1890ff;border-radius:0 12px 12px 0;height:100%;">
+                    <div
+                      style="display:flex;justify-content:space-between;align-items:start;flex-wrap:wrap;gap:8px;margin-bottom:10px;">
+                      <div style="display:flex;gap:8px;flex-wrap:wrap;">
+                        <nz-tag nzColor="blue">{{ pub.venue }}</nz-tag>
+                        <nz-tag nzColor="green">{{ pub.status }}</nz-tag>
+                        <nz-tag>{{ pub.year }}</nz-tag>
                       </div>
-                      <p style="font-size:14px;font-weight:600;color:#1a1a2e;margin-bottom:8px;line-height:1.5;">{{ pub.title }}</p>
-                      @if (pub.description) {
-                        <p style="font-size:12px;color:#595959;line-height:1.6;margin-bottom:10px;">{{ pub.description }}</p>
-                      }
-                      <div style="display:flex;flex-wrap:wrap;gap:6px;margin-bottom:10px;">
-                        @for (tag of pub.tags; track tag) { <nz-tag>{{ tag }}</nz-tag> }
-                      </div>
-                      @if (pub.url) {
-                        <a [href]="pub.url" target="_blank" nz-button nzType="link" style="padding:0;">
-                          <span nz-icon nzType="link"></span> IEEE Xplore
-                        </a>
-                      } @else {
-                        <span style="font-size:12px;color:#8c8c8c;">
-                          <span nz-icon nzType="check-circle" style="color:#52c41a;margin-right:4px;"></span>
-                          Accepted — Proceedings forthcoming
-                        </span>
-                      }
-                    </nz-card>
-                  </div>
+                      <span style="font-size:18px;font-weight:800;color:#e8e8e8;">#{{ i + 1 }}</span>
+                    </div>
+                    <p style="font-size:14px;font-weight:600;color:#1a1a2e;margin-bottom:8px;line-height:1.5;">{{
+                      pub.title }}</p>
+                    @if (pub.description) {
+                    <p style="font-size:12px;color:#595959;line-height:1.6;margin-bottom:10px;">{{ pub.description }}
+                    </p>
+                    }
+                    <div style="display:flex;flex-wrap:wrap;gap:6px;margin-bottom:10px;">
+                      @for (tag of pub.tags; track tag) { <nz-tag>{{ tag }}</nz-tag> }
+                    </div>
+                    @if (pub.url) {
+                    <a [href]="pub.url" target="_blank" nz-button nzType="link" style="padding:0;">
+                      <span nz-icon nzType="link"></span> IEEE Xplore
+                    </a>
+                    } @else {
+                    <span style="font-size:12px;color:#8c8c8c;">
+                      <span nz-icon nzType="check-circle" style="color:#52c41a;margin-right:4px;"></span>
+                      Accepted — Proceedings forthcoming
+                    </span>
+                    }
+                  </nz-card>
+                </div>
                 }
               </div>
             </div>
@@ -385,8 +409,10 @@
                 </p>
                 <div style="font-weight:600;font-size:13px;margin-bottom:10px;">Key Research Topics</div>
                 <div style="display:flex;flex-wrap:wrap;gap:8px;">
-                  @for (t of ['ML for Systems Optimisation','Log Analysis & Incident Detection','Predictive Caching','Adaptive TTL','Database Tuning','Anomaly Detection','Time-Series Modelling','Reinforcement Learning','MLOps','Vector Search','RAG']; track t) {
-                    <nz-tag nzColor="blue">{{ t }}</nz-tag>
+                  @for (t of ['ML for Systems Optimisation','Log Analysis & Incident Detection','Predictive
+                  Caching','Adaptive TTL','Database Tuning','Anomaly Detection','Time-Series Modelling','Reinforcement
+                  Learning','MLOps','Vector Search','RAG']; track t) {
+                  <nz-tag nzColor="blue">{{ t }}</nz-tag>
                   }
                 </div>
               </nz-card>
@@ -410,51 +436,50 @@
             <div nz-col [nzXs]="24" [nzMd]="14">
               <nz-card nzBorderless style="border-radius:12px;">
                 @if (sent) {
-                  <nz-result nzStatus="success" nzTitle="Message Sent!"
-                             nzSubTitle="Thanks! I'll reply within 24 hours.">
-                    <div nz-result-extra>
-                      <button nz-button nzType="primary" (click)="resetContact()">Send Another</button>
-                    </div>
-                  </nz-result>
+                <nz-result nzStatus="success" nzTitle="Message Sent!" nzSubTitle="Thanks! I'll reply within 24 hours.">
+                  <div nz-result-extra>
+                    <button nz-button nzType="primary" (click)="resetContact()">Send Another</button>
+                  </div>
+                </nz-result>
                 } @else {
-                  <h3 style="font-weight:700;margin-bottom:20px;">Send a Message</h3>
-                  <form nz-form [formGroup]="contactForm" (ngSubmit)="submitContact()" nzLayout="vertical">
-                    <nz-form-item>
-                      <nz-form-label nzRequired>Your Name</nz-form-label>
-                      <nz-form-control nzErrorTip="Please enter your name">
-                        <nz-input-group [nzPrefix]="prefixUser">
-                          <ng-template #prefixUser><span nz-icon nzType="user"></span></ng-template>
-                          <input nz-input formControlName="name" placeholder="Your full name"/>
-                        </nz-input-group>
-                      </nz-form-control>
-                    </nz-form-item>
-                    <nz-form-item>
-                      <nz-form-label nzRequired>Email</nz-form-label>
-                      <nz-form-control nzErrorTip="Please enter a valid email">
-                        <nz-input-group [nzPrefix]="prefixMail">
-                          <ng-template #prefixMail><span nz-icon nzType="mail"></span></ng-template>
-                          <input nz-input formControlName="email" placeholder="you@example.com"/>
-                        </nz-input-group>
-                      </nz-form-control>
-                    </nz-form-item>
-                    <nz-form-item>
-                      <nz-form-label nzRequired>Subject</nz-form-label>
-                      <nz-form-control nzErrorTip="Subject required">
-                        <input nz-input formControlName="subject" placeholder="Job opportunity, collaboration..."/>
-                      </nz-form-control>
-                    </nz-form-item>
-                    <nz-form-item>
-                      <nz-form-label nzRequired>Message</nz-form-label>
-                      <nz-form-control nzErrorTip="Message must be at least 20 characters">
-                        <textarea nz-input formControlName="message" [nzAutosize]="{minRows:4,maxRows:8}"
-                                  placeholder="Tell me about your project or opportunity..."></textarea>
-                      </nz-form-control>
-                    </nz-form-item>
-                    <button nz-button nzType="primary" nzBlock nzSize="large" [nzLoading]="sending" type="submit">
-                      <span nz-icon nzType="send"></span>
-                      {{ sending ? 'Sending...' : 'Send Message' }}
-                    </button>
-                  </form>
+                <h3 style="font-weight:700;margin-bottom:20px;">Send a Message</h3>
+                <form nz-form [formGroup]="contactForm" (ngSubmit)="submitContact()" nzLayout="vertical">
+                  <nz-form-item>
+                    <nz-form-label nzRequired>Your Name</nz-form-label>
+                    <nz-form-control nzErrorTip="Please enter your name">
+                      <nz-input-group [nzPrefix]="prefixUser">
+                        <ng-template #prefixUser><span nz-icon nzType="user"></span></ng-template>
+                        <input nz-input formControlName="name" placeholder="Your full name" />
+                      </nz-input-group>
+                    </nz-form-control>
+                  </nz-form-item>
+                  <nz-form-item>
+                    <nz-form-label nzRequired>Email</nz-form-label>
+                    <nz-form-control nzErrorTip="Please enter a valid email">
+                      <nz-input-group [nzPrefix]="prefixMail">
+                        <ng-template #prefixMail><span nz-icon nzType="mail"></span></ng-template>
+                        <input nz-input formControlName="email" placeholder="you@example.com" />
+                      </nz-input-group>
+                    </nz-form-control>
+                  </nz-form-item>
+                  <nz-form-item>
+                    <nz-form-label nzRequired>Subject</nz-form-label>
+                    <nz-form-control nzErrorTip="Subject required">
+                      <input nz-input formControlName="subject" placeholder="Job opportunity, collaboration..." />
+                    </nz-form-control>
+                  </nz-form-item>
+                  <nz-form-item>
+                    <nz-form-label nzRequired>Message</nz-form-label>
+                    <nz-form-control nzErrorTip="Message must be at least 20 characters">
+                      <textarea nz-input formControlName="message" [nzAutosize]="{minRows:4,maxRows:8}"
+                        placeholder="Tell me about your project or opportunity..."></textarea>
+                    </nz-form-control>
+                  </nz-form-item>
+                  <button nz-button nzType="primary" nzBlock nzSize="large" [nzLoading]="sending" type="submit">
+                    <span nz-icon nzType="send"></span>
+                    {{ sending ? 'Sending...' : 'Send Message' }}
+                  </button>
+                </form>
                 }
               </nz-card>
             </div>
@@ -462,22 +487,26 @@
             <div nz-col [nzXs]="24" [nzMd]="10">
               <div style="display:flex;flex-direction:column;gap:12px;">
                 @for (s of [
-                  {label:'Email',    value:'hasebulhassan21@gmail.com',           url:'mailto:hasebulhassan21@gmail.com',              icon:'mail',     bg:'#ea4335'},
-                  {label:'Phone',    value:'+880 1758144856',                     url:'tel:+8801758144856',                            icon:'phone',    bg:'#52c41a'},
-                  {label:'GitHub',   value:'github.com/Hasebul21',                url:'https://github.com/Hasebul21',                  icon:'github',   bg:'#24292e'},
-                  {label:'LinkedIn', value:'linkedin.com/in/hasebul',             url:'https://linkedin.com/in/hasebul',               icon:'linkedin', bg:'#0a66c2'},
-                  {label:'IEEE',     value:'View Research Publications',          url:'https://ieeexplore.ieee.org/document/11437157', icon:'file-text',bg:'#00629b'}
+                {label:'Email', value:'hasebulhassan21@gmail.com', url:'mailto:hasebulhassan21@gmail.com', icon:'mail',
+                bg:'#ea4335'},
+                {label:'Phone', value:'+880 1758144856', url:'tel:+8801758144856', icon:'phone', bg:'#52c41a'},
+                {label:'GitHub', value:'github.com/Hasebul21', url:'https://github.com/Hasebul21', icon:'github',
+                bg:'#24292e'},
+                {label:'LinkedIn', value:'linkedin.com/in/hasebul', url:'https://linkedin.com/in/hasebul',
+                icon:'linkedin', bg:'#0a66c2'},
+                {label:'IEEE', value:'View Research Publications', url:'https://ieeexplore.ieee.org/document/11437157',
+                icon:'file-text',bg:'#00629b'}
                 ]; track s.label) {
-                  <a [href]="s.url" target="_blank"
-                     style="display:flex;align-items:center;gap:14px;padding:14px 16px;background:#fff;border-radius:12px;border:1px solid #f0f0f0;text-decoration:none;transition:all .2s;"
-                     (mouseenter)="$any($event.currentTarget).style.borderColor='#1890ff'"
-                     (mouseleave)="$any($event.currentTarget).style.borderColor='#f0f0f0'">
-                    <nz-avatar [nzIcon]="s.icon" [style.background-color]="s.bg"></nz-avatar>
-                    <div>
-                      <div style="font-weight:600;font-size:14px;color:#1a1a2e;">{{ s.label }}</div>
-                      <div style="font-size:12px;color:#8c8c8c;">{{ s.value }}</div>
-                    </div>
-                  </a>
+                <a [href]="s.url" target="_blank"
+                  style="display:flex;align-items:center;gap:14px;padding:14px 16px;background:#fff;border-radius:12px;border:1px solid #f0f0f0;text-decoration:none;transition:all .2s;"
+                  (mouseenter)="$any($event.currentTarget).style.borderColor='#1890ff'"
+                  (mouseleave)="$any($event.currentTarget).style.borderColor='#f0f0f0'">
+                  <nz-avatar [nzIcon]="s.icon" [style.background-color]="s.bg"></nz-avatar>
+                  <div>
+                    <div style="font-weight:600;font-size:14px;color:#1a1a2e;">{{ s.label }}</div>
+                    <div style="font-size:12px;color:#8c8c8c;">{{ s.value }}</div>
+                  </div>
+                </a>
                 }
               </div>
             </div>

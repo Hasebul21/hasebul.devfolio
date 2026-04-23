@@ -2,32 +2,32 @@ import { Component, signal, OnInit, inject } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule, ReactiveFormsModule, FormBuilder, Validators } from '@angular/forms';
 
-import { NzLayoutModule }   from 'ng-zorro-antd/layout';
-import { NzTabsModule }     from 'ng-zorro-antd/tabs';
-import { NzCardModule }     from 'ng-zorro-antd/card';
-import { NzButtonModule }   from 'ng-zorro-antd/button';
-import { NzTagModule }      from 'ng-zorro-antd/tag';
+import { NzLayoutModule } from 'ng-zorro-antd/layout';
+import { NzTabsModule } from 'ng-zorro-antd/tabs';
+import { NzCardModule } from 'ng-zorro-antd/card';
+import { NzButtonModule } from 'ng-zorro-antd/button';
+import { NzTagModule } from 'ng-zorro-antd/tag';
 import { NzProgressModule } from 'ng-zorro-antd/progress';
 import { NzTimelineModule } from 'ng-zorro-antd/timeline';
-import { NzGridModule }     from 'ng-zorro-antd/grid';
-import { NzAvatarModule }   from 'ng-zorro-antd/avatar';
-import { NzDividerModule }  from 'ng-zorro-antd/divider';
-import { NzBadgeModule }    from 'ng-zorro-antd/badge';
-import { NzFormModule }     from 'ng-zorro-antd/form';
-import { NzInputModule }    from 'ng-zorro-antd/input';
-import { NzSwitchModule }   from 'ng-zorro-antd/switch';
-import { NzIconModule }     from 'ng-zorro-antd/icon';
-import { NzTooltipModule }  from 'ng-zorro-antd/tooltip';
-import { NzResultModule }   from 'ng-zorro-antd/result';
+import { NzGridModule } from 'ng-zorro-antd/grid';
+import { NzAvatarModule } from 'ng-zorro-antd/avatar';
+import { NzDividerModule } from 'ng-zorro-antd/divider';
+import { NzBadgeModule } from 'ng-zorro-antd/badge';
+import { NzFormModule } from 'ng-zorro-antd/form';
+import { NzInputModule } from 'ng-zorro-antd/input';
+import { NzSwitchModule } from 'ng-zorro-antd/switch';
+import { NzIconModule } from 'ng-zorro-antd/icon';
+import { NzTooltipModule } from 'ng-zorro-antd/tooltip';
+import { NzResultModule } from 'ng-zorro-antd/result';
 import { NzMessageService } from 'ng-zorro-antd/message';
 
-import { SkillsService }     from './core/services/skills.service';
-import { ProjectsService }   from './core/services/projects.service';
+import { SkillsService } from './core/services/skills.service';
+import { ProjectsService } from './core/services/projects.service';
 import { ExperienceService } from './core/services/experience.service';
-import { SkillGroup }        from './core/models/skill.model';
-import { Project }           from './core/models/project.model';
-import { Experience }        from './core/models/experience.model';
-import { Education }         from './core/models/contact.model';
+import { SkillGroup } from './core/models/skill.model';
+import { Project } from './core/models/project.model';
+import { Experience } from './core/models/experience.model';
+import { Education } from './core/models/contact.model';
 
 export interface Publication {
   title: string;
@@ -61,20 +61,20 @@ export interface Award {
   templateUrl: './app.html',
 })
 export class App implements OnInit {
-  private readonly skillsSvc     = inject(SkillsService);
-  private readonly projectsSvc   = inject(ProjectsService);
+  private readonly skillsSvc = inject(SkillsService);
+  private readonly projectsSvc = inject(ProjectsService);
   private readonly experienceSvc = inject(ExperienceService);
-  private readonly fb            = inject(FormBuilder);
-  private readonly msg           = inject(NzMessageService);
+  private readonly fb = inject(FormBuilder);
+  private readonly msg = inject(NzMessageService);
 
-  isDark  = signal(false);
+  isDark = signal(false);
   selectedTab = 0;
   // Tabs: 0=Home, 1=Skills, 2=Projects, 3=Experience, 4=Research, 5=Contact
 
   skillGroups: SkillGroup[] = [];
-  allProjects: Project[]    = [];
+  allProjects: Project[] = [];
   experiences: Experience[] = [];
-  education: Education[]    = [];
+  education: Education[] = [];
 
   activeFilter = 'All';
 
@@ -162,10 +162,10 @@ I aim to design efficient and scalable ML-driven systems that improve reliabilit
 Additionally, I am interested in MLOps practices (model versioning, monitoring, and deployment), data-centric AI development, and the integration of ML models into complex software infrastructures — building robust, interpretable, and maintainable systems that align with real-world DevOps and SRE constraints.`;
 
   sending = false;
-  sent    = false;
+  sent = false;
   contactForm = this.fb.group({
-    name:    ['', [Validators.required, Validators.minLength(2)]],
-    email:   ['', [Validators.required, Validators.email]],
+    name: ['', [Validators.required, Validators.minLength(2)]],
+    email: ['', [Validators.required, Validators.email]],
     subject: ['', [Validators.required, Validators.minLength(5)]],
     message: ['', [Validators.required, Validators.minLength(20)]],
   });
